@@ -2,7 +2,7 @@
   {
     "id": 4,
     "featured": false,
-    "title": "Some Title",
+    "title": "Some Experiment",
     "date": "06/27/2024",
     "type": "Experiment",
     "tags": ["Tag1", "99", "Tag6"],
@@ -12,7 +12,7 @@
   {
     "id": 3,
     "featured": false,
-    "title": "Some Title",
+    "title": "Some Discussion",
     "date": "06/27/2024",
     "type": "Discussion",
     "tags": ["Tag1", "Tag5", "Tag6"],
@@ -22,7 +22,7 @@
   {
     "id": 2,
     "featured": true,
-    "title": "Some Title",
+    "title": "GridSquid",
     "date": "06/26/2024",
     "type": "Project",
     "tags": ["Tag2", "Tag4", "Tag5"],
@@ -32,7 +32,7 @@
   {
     "id": 1,
     "featured": true,
-    "title": "Some Title2",
+    "title": "Oopsie",
     "date": "06/25/2024",
     "type": "Project",
     "tags": ["Tag1", "Tag2", "Tag3", "Butts"],

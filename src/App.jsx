@@ -4,20 +4,21 @@ import "./App.css";
 import postData from "./posts.json";
 
 function App() {
-  const [posts, setPosts] = useState(postData);
+  const [filteredPosts, setFilteredPosts] = useState(postData);
 
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
-  posts.map((post) => postTypesSet.add(post.type));
+  postData.map((post) => postTypesSet.add(post.type));
   const allPostTypes = Array.from(postTypesSet).sort();
 
   // Create sorted array of all post tags without duplicates
   const postTagsSet = new Set();
-  posts.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
+  postData.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
   const allPostTags = Array.from(postTagsSet).sort();
 
   // Create array of featured posts sorted by date
-  const featuredPosts = posts.filter;
+  const featuredPosts = postData.filter((post) => post.featured === true);
+  console.log(featuredPosts);
 
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
@@ -29,7 +30,6 @@ function App() {
     <>
       <div className="title-container">
         <div className="cube-container">
-          {/* <div className="cube"> */}
           <div className="face face-top">
             Steven Coy
             <br />
@@ -42,7 +42,6 @@ function App() {
           <div className="face face-back"></div>
           <div className="face face-right"></div>
           <div className="face face-bottom"></div>
-          {/* </div> */}
         </div>
       </div>
 
@@ -50,27 +49,32 @@ function App() {
 
       <div>
         Post Types:
-        {allPostTypes
-          ? allPostTypes.map((type) => (
-              <button key={crypto.randomUUID()}>{type}</button>
-            ))
-          : "Loading post types..."}
+        {allPostTypes.map((type) => (
+          <button key={crypto.randomUUID()}>{type}</button>
+        ))}
       </div>
 
       <div>
         Tags:
-        {allPostTags
-          ? allPostTags.map((tag) => (
-              <button key={crypto.randomUUID()}>{tag}</button>
-            ))
-          : "Loading tags..."}
+        {allPostTags.map((tag) => (
+          <button key={crypto.randomUUID()}>{tag}</button>
+        ))}
       </div>
 
-      <div>Featured Posts</div>
+      <div>
+        Featured Posts:{" "}
+        {featuredPosts.map((post) => {
+          return (
+            <div className="featured-post" key={post.id}>
+              <img className="featured-post-image" src={post.image} />
+            </div>
+          );
+        })}
+      </div>
 
       <div>
         Dev Blog
-        {posts.map((post) => {
+        {filteredPosts.map((post) => {
           return (
             <div className="post" key={post.id}>
               <p>{post.title}</p>
