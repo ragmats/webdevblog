@@ -5,27 +5,20 @@ import postData from "./posts.json";
 
 function App() {
   const [posts, setPosts] = useState(postData);
-  const [postTypes, setPostTypes] = useState(null);
-  const [postTags, setPostTags] = useState(null);
 
+  // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
+  posts ? posts.map((post) => postTypesSet.add(post.type)) : [];
+  const allPostTypes = postTypesSet ? Array.from(postTypesSet).sort() : [];
+
+  // Create sorted array of all post tags without duplicates
   const postTagsSet = new Set();
+  posts
+    ? posts.map((post) => post.tags.map((tag) => postTagsSet.add(tag)))
+    : [];
+  const allPostTags = postTagsSet ? Array.from(postTagsSet).sort() : [];
 
-  useEffect(() => {
-    // Add post types to set and sort
-    posts.map((post) => postTypesSet.add(post.type));
-    setPostTypes(Array.from(postTypesSet).sort());
-
-    // Add post tags to set and sort
-    posts.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
-    setPostTags(Array.from(postTagsSet).sort());
-  }, [posts]);
-
-  useEffect(() => {
-    console.log(postTypes);
-    console.log(postTags);
-  });
-
+  // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
     const [month, day, year] = dateString.split("/");
     return `${month}.${day}.${year}`;
@@ -55,18 +48,18 @@ function App() {
       <div>Profile Summary</div>
 
       <div>
-        Post Types:{" "}
-        {postTypes
-          ? postTypes.map((type) => (
+        Post Types:
+        {allPostTypes
+          ? allPostTypes.map((type) => (
               <button key={crypto.randomUUID()}>{type}</button>
             ))
           : "Loading post types..."}
       </div>
 
       <div>
-        Tags:{" "}
-        {postTags
-          ? postTags.map((tag) => (
+        Tags:
+        {allPostTags
+          ? allPostTags.map((tag) => (
               <button key={crypto.randomUUID()}>{tag}</button>
             ))
           : "Loading tags..."}
