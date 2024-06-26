@@ -8,15 +8,16 @@ function App() {
 
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
-  posts ? posts.map((post) => postTypesSet.add(post.type)) : [];
-  const allPostTypes = postTypesSet ? Array.from(postTypesSet).sort() : [];
+  posts.map((post) => postTypesSet.add(post.type));
+  const allPostTypes = Array.from(postTypesSet).sort();
 
   // Create sorted array of all post tags without duplicates
   const postTagsSet = new Set();
-  posts
-    ? posts.map((post) => post.tags.map((tag) => postTagsSet.add(tag)))
-    : [];
-  const allPostTags = postTagsSet ? Array.from(postTagsSet).sort() : [];
+  posts.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
+  const allPostTags = Array.from(postTagsSet).sort();
+
+  // Create array of featured posts sorted by date
+  const featuredPosts = posts.filter;
 
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
