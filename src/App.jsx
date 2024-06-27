@@ -16,7 +16,7 @@ function App() {
     if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
       // Filter posts that have any of the selected types
       setFilteredPosts(
-        filteredPosts.filter((post) => selectedTypesArray.includes(post.type))
+        postData.filter((post) => selectedTypesArray.includes(post.type))
       );
     } else if (
       selectedTypesArray.length === 0 &&
@@ -24,17 +24,17 @@ function App() {
     ) {
       // Filter posts that have any of the selected tags
       setFilteredPosts(
-        filteredPosts.filter((post) =>
+        postData.filter((post) =>
           selectedTagsArray.some((tag) => post.tags.includes(tag))
         )
       );
     } else if (selectedTypesArray.length > 0 && selectedTagsArray.length > 0) {
       // Filter posts that have any of the selected types and any of the selected tags
       setFilteredPosts(
-        filteredPosts.filter((post) =>
+        postData.filter((post) =>
           selectedTagsArray.some(
             (tag) =>
-              selectedTypesArray.includes(post.type) && post.tags.includes(tag)
+              selectedTypesArray.includes(post.type) || post.tags.includes(tag)
           )
         )
       );
@@ -79,6 +79,13 @@ function App() {
       return newSet;
     });
   }
+
+  // function filterTypesOnly(types) {
+  //   const postsFilteredTypeOnly = filteredPosts.filter((post) =>
+  //     types.includes(post.type)
+  //   );
+  //   return postsFilteredTypeOnly;
+  // }
 
   return (
     <>
