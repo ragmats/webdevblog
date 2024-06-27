@@ -9,8 +9,39 @@ function App() {
   const [selectedTags, setSelectedTags] = useState(new Set());
 
   useEffect(() => {
-    console.log({ selectedTags });
-  }, [selectedTags]);
+    // Convert sets to arrays to enable some method
+    const selectedTypesArray = Array.from(selectedTypes);
+    const selectedTagsArray = Array.from(selectedTags);
+
+    if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
+      // Filter posts that have any of the selected types
+      setFilteredPosts(
+        filteredPosts.filter((post) => selectedTypesArray.includes(post.type))
+      );
+    } else if (
+      selectedTypesArray.length === 0 &&
+      selectedTagsArray.length > 0
+    ) {
+      // Filter posts that have any of the selected tags
+      setFilteredPosts(
+        filteredPosts.filter((post) =>
+          selectedTagsArray.some((tag) => post.tags.includes(tag))
+        )
+      );
+    } else if (selectedTypesArray.length > 0 && selectedTagsArray.length > 0) {
+      // Filter posts that have any of the selected types and any of the selected tags
+      setFilteredPosts(
+        filteredPosts.filter((post) =>
+          selectedTagsArray.some(
+            (tag) =>
+              selectedTypesArray.includes(post.type) && post.tags.includes(tag)
+          )
+        )
+      );
+    } else {
+      setFilteredPosts(postData);
+    }
+  }, [selectedTypes, selectedTags]);
 
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
@@ -119,8 +150,9 @@ function App() {
           return (
             <div className="post" key={post.id}>
               <p>{post.title}</p>
+              <p>{post.type}</p>
               <p>{formatDate(post.date)}</p>
-              {post.tags.map((tag) => (
+              {post.tags.sort().map((tag) => (
                 <button key={crypto.randomUUID()}>{tag}</button>
               ))}
               {post.image ? (
