@@ -5,6 +5,12 @@ import postData from "./posts.json";
 
 function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
+  const [selectedTypes, setSelectedTypes] = useState(new Set());
+  const [selectedTags, setSelectedTags] = useState(new Set());
+
+  useEffect(() => {
+    console.log({ selectedTags });
+  }, [selectedTags]);
 
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
@@ -18,12 +24,29 @@ function App() {
 
   // Create array of featured posts sorted by date
   const featuredPosts = postData.filter((post) => post.featured === true);
-  console.log(featuredPosts);
 
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
     const [month, day, year] = dateString.split("/");
     return `${month}.${day}.${year}`;
+  }
+
+  function updateSelectedTypes(type) {
+    setSelectedTypes((currentSelectedTypes) => {
+      const newSet = new Set(currentSelectedTypes);
+      if (newSet.has(type)) newSet.delete(type);
+      else newSet.add(type);
+      return newSet;
+    });
+  }
+
+  function updateSelectedTags(tag) {
+    setSelectedTags((currentSelectedTags) => {
+      const newSet = new Set(currentSelectedTags);
+      if (newSet.has(tag)) newSet.delete(tag);
+      else newSet.add(tag);
+      return newSet;
+    });
   }
 
   return (
@@ -50,14 +73,32 @@ function App() {
       <div>
         Post Types:
         {allPostTypes.map((type) => (
-          <button key={crypto.randomUUID()}>{type}</button>
+          <button
+            className={
+              selectedTypes.has(type) ? "btn-tag btn-tag-selected" : "btn-tag"
+            }
+            key={crypto.randomUUID()}
+            onClick={() => {
+              updateSelectedTypes(type);
+            }}
+          >
+            {type}
+          </button>
         ))}
       </div>
 
       <div>
         Tags:
         {allPostTags.map((tag) => (
-          <button key={crypto.randomUUID()}>{tag}</button>
+          <button
+            className={
+              selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
+            }
+            key={crypto.randomUUID()}
+            onClick={() => updateSelectedTags(tag)}
+          >
+            {tag}
+          </button>
         ))}
       </div>
 

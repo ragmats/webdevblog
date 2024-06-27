@@ -142,3 +142,17 @@ body {
 .featured-post-image {
   width: 100%;
 }
+
+.btn-tag {
+  border: 1px solid black;
+  padding: 0.5em;
+  background: lightgray;
+}
+
+.btn-tag:hover {
+  background: darkgrey;
+}
+
+.btn-tag-selected {
+  background: darkgrey;
+}
