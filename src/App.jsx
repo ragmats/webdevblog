@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import postData from "./posts.json";
 
+// TODO Hook up featured posts
+// TODO Add basic profile summary
+// TODO Add post slugs?
+// TODO Break into components
+// TODO Populate postData with real posts
+// TODO Add styles (light mode default)
+// TODO Add icons to site (LinkedIn, etc.)
+// TODO Add dark mode
+// TODO Add action button
+
 function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
   const [selectedTypes, setSelectedTypes] = useState(new Set());
@@ -58,7 +68,10 @@ function App() {
 
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
-    const [month, day, year] = dateString.split("/");
+    const date = new Date(dateString);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
     return `${month}.${day}.${year}`;
   }
 
@@ -78,6 +91,10 @@ function App() {
       else newSet.add(tag);
       return newSet;
     });
+  }
+
+  function filterPostsByID(id) {
+    setFilteredPosts(postData.filter((post) => post.id === id));
   }
 
   function clearAllTags() {
@@ -136,22 +153,35 @@ function App() {
             {tag}
           </button>
         ))}
-        <button onClick={() => clearAllTags()}>-reset tags-</button>
+        {selectedTypes.size !== 0 || selectedTags.size !== 0 ? (
+          <button onClick={() => clearAllTags()}>-reset tags-</button>
+        ) : null}
       </div>
 
       <div>
-        Featured Posts:{" "}
-        {featuredPosts.map((post) => {
-          return (
-            <div className="featured-post" key={post.id}>
-              <img className="featured-post-image" src={post.image} />
-            </div>
-          );
-        })}
+        Featured Posts:
+        <div className="featured-posts-container">
+          {featuredPosts.map((post) => {
+            return (
+              <button
+                className="btn-featured"
+                key={post.id}
+                onClick={() => filterPostsByID(post.id)}
+              >
+                <div className="featured-post">
+                  <img className="featured-post-image" src={post.image} />
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div>
-        <p>Dev Blog</p>
+        <p>Dev Blog</p>{" "}
+        {filteredPosts.length !== postData.length ? (
+          <button onClick={() => clearAllTags()}>-see all posts-</button>
+        ) : null}
         {filteredPosts.length === 0 && (
           <p>
             No posts!{" "}
