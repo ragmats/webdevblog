@@ -80,12 +80,10 @@ function App() {
     });
   }
 
-  // function filterTypesOnly(types) {
-  //   const postsFilteredTypeOnly = filteredPosts.filter((post) =>
-  //     types.includes(post.type)
-  //   );
-  //   return postsFilteredTypeOnly;
-  // }
+  function clearAllTags() {
+    setSelectedTypes(new Set());
+    setSelectedTags(new Set());
+  }
 
   return (
     <>
@@ -138,6 +136,7 @@ function App() {
             {tag}
           </button>
         ))}
+        <button onClick={() => clearAllTags()}>-reset tags-</button>
       </div>
 
       <div>
@@ -157,10 +156,39 @@ function App() {
           return (
             <div className="post" key={post.id}>
               <p>{post.title}</p>
-              <p>{post.type}</p>
+              <p>
+                {/* Post Type */}
+                <button
+                  className={
+                    selectedTypes.has(post.type)
+                      ? "btn-tag btn-tag-selected"
+                      : "btn-tag"
+                  }
+                  onClick={() => {
+                    clearAllTags();
+                    updateSelectedTypes(post.type);
+                  }}
+                >
+                  {post.type}
+                </button>
+              </p>
               <p>{formatDate(post.date)}</p>
+              {/* Post Tags */}
               {post.tags.sort().map((tag) => (
-                <button key={crypto.randomUUID()}>{tag}</button>
+                <button
+                  className={
+                    selectedTags.has(tag)
+                      ? "btn-tag btn-tag-selected"
+                      : "btn-tag"
+                  }
+                  key={crypto.randomUUID()}
+                  onClick={() => {
+                    clearAllTags();
+                    updateSelectedTags(tag);
+                  }}
+                >
+                  {tag}
+                </button>
               ))}
               {post.image ? (
                 <img className="post-image" src={post.image} />
