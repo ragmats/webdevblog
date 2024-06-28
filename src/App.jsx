@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import postData from "./posts.json";
 
-// TODO Hook up featured posts
 // TODO Add basic profile summary
-// TODO Add post slugs?
 // TODO Break into components
+// TODO Add post slugs?
 // TODO Populate postData with real posts
 // TODO Add styles (light mode default)
 // TODO Add icons to site (LinkedIn, etc.)
@@ -121,7 +120,32 @@ function App() {
         </div>
       </div>
 
-      <div>Profile Summary</div>
+      <div className="profile">
+        <div className="profile-photo"></div>
+        <div className="profile-summary">
+          <p>
+            Hi, I'm Steven. I started building websites as a teenager with HTML
+            and CSS in Notepad. These days, I like to make web applications
+            mostly with JavaScript and React. While I've taken courses like
+            Harvard's CS50x, my development skills are largely self-taught.
+          </p>
+          <p>
+            Here's how it goes: I think of an idea, dive into the unknown,
+            obsess about it, and finally it's done! I learn best through
+            projects, so I always try to have one in progress, no matter how
+            small.
+          </p>
+          <p>
+            This site, which I built with React, is a showcase of my coding
+            projects, experiments, and discussions. If you prefer a more
+            professional photo than my cat, visit my{" "}
+            <a href="https://www.linkedin.com/in/stevenlewiscoy/" target="_new">
+              LinkedIn
+            </a>
+            .
+          </p>
+        </div>
+      </div>
 
       <div>
         Post Types:

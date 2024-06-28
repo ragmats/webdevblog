@@ -18,8 +18,10 @@
 }
 
 body {
+  border: 1px solid purple;
+  max-width: 1000px;
+  margin: 0 auto;
   perspective: 2000px;
-
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -119,8 +121,32 @@ body {
   }
 }
 
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+}
+
+.profile-photo {
+  box-shadow: 0px 0px 2px 2px black;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url("/img/profile.jpg");
+  background-size: cover;
+}
+
+.profile-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* max-width: 200px; */
+  gap: 1em;
+}
+
 .post {
-  max-width: 800px;
   border: 1px solid black;
   border-radius: 25px;
   margin: 1em;
