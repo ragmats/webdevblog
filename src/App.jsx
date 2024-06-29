@@ -178,7 +178,7 @@ function App() {
           </button>
         ))}
         {selectedTypes.size !== 0 || selectedTags.size !== 0 ? (
-          <button onClick={() => clearAllTags()}>-reset tags-</button>
+          <button onClick={() => clearAllTags()}>// reset filters //</button>
         ) : null}
       </div>
 
@@ -202,16 +202,7 @@ function App() {
       </div>
 
       <div>
-        <p>Dev Blog</p>{" "}
-        {filteredPosts.length !== postData.length ? (
-          <button onClick={() => clearAllTags()}>-see all posts-</button>
-        ) : null}
-        {filteredPosts.length === 0 && (
-          <p>
-            No posts!{" "}
-            <button onClick={() => clearAllTags()}>Reset filters?</button>
-          </p>
-        )}
+        <p>Dev Blog</p> {filteredPosts.length === 0 && <p>No posts!</p>}
         {filteredPosts
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((post) => {
