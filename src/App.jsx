@@ -124,21 +124,20 @@ function App() {
         <div className="profile-photo"></div>
         <div className="profile-summary">
           <p>
-            Hi, I'm Steven. I started building websites as a teenager with HTML
-            and CSS in Notepad. These days, I like to make web applications
-            mostly with JavaScript and React. While I've taken courses like
-            Harvard's CS50x, my development skills are largely self-taught.
+            Hi. I'm Steven. I started building websites as a teenager with HTML
+            and CSS in Notepad. These days, I like to make web apps mostly with
+            JavaScript and React. While I've taken courses like Harvard's CS50x,
+            my dev skills are largely self-taught.
           </p>
           <p>
-            Here's how it goes: I think of an idea, dive into the unknown,
-            obsess about it, and finally it's done! I learn best through
-            projects, so I always try to have one in progress, no matter how
-            small.
+            I like being able to have an idea, obsess over it, and bring it to
+            life with code. I learn the most when I begin with no clue how to
+            make it happen. But once it does, it's kind of amazing.
           </p>
           <p>
             This site, which I built with React, is a showcase of my coding
-            projects, experiments, and discussions. If you prefer a more
-            professional photo than my cat, visit my{" "}
+            projects, experiments, and discussions. If you prefer a photo more
+            professional than my cat, you can visit my{" "}
             <a href="https://www.linkedin.com/in/stevenlewiscoy/" target="_new">
               LinkedIn
             </a>
