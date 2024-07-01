@@ -152,6 +152,11 @@ body {
   gap: 1em;
 }
 
+.filters-container {
+  border: 1px solid pink;
+  margin: 2em 0;
+}
+
 .post {
   border: 1px solid black;
   border-radius: 25px;

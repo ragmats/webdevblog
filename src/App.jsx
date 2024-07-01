@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 // import reactLogo from './assets/react.svg'
 import "./App.css";
+import CubeHeader from "./components/CubeHeader";
+import Filters from "./components/Filters";
+import Profile from "./components/Profile";
 import postData from "./posts.json";
 
-// TODO Add basic profile summary
 // TODO Break into components
 // TODO Add post slugs?
 // TODO Populate postData with real posts
@@ -52,16 +54,6 @@ function App() {
     }
   }, [selectedTypes, selectedTags]);
 
-  // Create sorted array of all post types without duplicates
-  const postTypesSet = new Set();
-  postData.map((post) => postTypesSet.add(post.type));
-  const allPostTypes = Array.from(postTypesSet).sort();
-
-  // Create sorted array of all post tags without duplicates
-  const postTagsSet = new Set();
-  postData.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
-  const allPostTags = Array.from(postTagsSet).sort();
-
   // Create array of featured posts sorted by date
   const featuredPosts = postData.filter((post) => post.featured === true);
 
@@ -103,106 +95,37 @@ function App() {
 
   return (
     <>
-      <div className="title-container">
-        <div className="cube-container">
-          <div className="face face-top">
-            Steven Coy
-            <br />
-            Web Developer
-          </div>
-          <div className="face face-left">LinkedIn, GitHub, Hackerrank</div>
-          <div className="face face-front">
-            JavaScript, HTML, CSS, React, Next.js, Git, Python, Django, Flask
-          </div>
-          <div className="face face-back"></div>
-          <div className="face face-right"></div>
-          <div className="face face-bottom"></div>
-        </div>
-      </div>
+      <CubeHeader />
 
-      <div className="profile">
-        <div className="profile-photo-container">
-          <img className="profile-photo" src="/img/profile.jpg"></img>
-        </div>
-        <div className="profile-summary">
-          <p>
-            Hi. I'm Steven. I started building websites as a teenager with HTML
-            and CSS in Notepad. These days, I like to make web apps mostly with
-            JavaScript and React. While I've taken courses like Harvard's CS50x,
-            my dev skills are largely self-taught.
-          </p>
-          <p>
-            I like being able to have an idea, obsess over it, and bring it to
-            life with code. I learn the most when I begin with no clue how to
-            make it happen. But once it does, it's kind of amazing.
-          </p>
-          <p>
-            This site,{" "}
-            <a
-              href="https://github.com/ragmats/webdevblog/tree/main/src"
-              target="_new"
-            >
-              which I built with React
-            </a>
-            , is a showcase of my coding projects, experiments, and discussions.
-          </p>
-        </div>
-      </div>
+      <Profile />
 
-      <div>
-        Post Types:
-        {allPostTypes.map((type) => (
-          <button
-            className={
-              selectedTypes.has(type) ? "btn-tag btn-tag-selected" : "btn-tag"
-            }
-            key={crypto.randomUUID()}
-            onClick={() => {
-              updateSelectedTypes(type);
-            }}
-          >
-            {type}
-          </button>
-        ))}
-      </div>
+      <Filters
+        postData={postData}
+        selectedTypes={selectedTypes}
+        selectedTags={selectedTags}
+        updateSelectedTypes={updateSelectedTypes}
+        updateSelectedTags={updateSelectedTags}
+        clearAllTags={clearAllTags}
+        filteredPostLen={filteredPosts.length}
+      />
 
-      <div>
-        Tags:
-        {allPostTags.map((tag) => (
-          <button
-            className={
-              selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
-            }
-            key={crypto.randomUUID()}
-            onClick={() => updateSelectedTags(tag)}
-          >
-            {tag}
-          </button>
-        ))}
-        {selectedTypes.size !== 0 || selectedTags.size !== 0 ? (
-          <button onClick={() => clearAllTags()}>// reset filters //</button>
-        ) : null}
-      </div>
-
-      <div>
+      <div className="featured-posts-container">
         Featured Posts:
-        <div className="featured-posts-container">
-          {featuredPosts
-            .sort((a, b) => new Date(a.date) - new Date(b.date))
-            .map((post) => {
-              return (
-                <button
-                  className="btn-featured"
-                  key={post.id}
-                  onClick={() => filterPostsByID(post.id)}
-                >
-                  <div className="featured-post">
-                    <img className="featured-post-image" src={post.image} />
-                  </div>
-                </button>
-              );
-            })}
-        </div>
+        {featuredPosts
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .map((post) => {
+            return (
+              <button
+                className="btn-featured"
+                key={post.id}
+                onClick={() => filterPostsByID(post.id)}
+              >
+                <div className="featured-post">
+                  <img className="featured-post-image" src={post.image} />
+                </div>
+              </button>
+            );
+          })}
       </div>
 
       <div>
