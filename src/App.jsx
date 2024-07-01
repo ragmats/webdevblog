@@ -121,7 +121,9 @@ function App() {
       </div>
 
       <div className="profile">
-        <div className="profile-photo"></div>
+        <div className="profile-photo-container">
+          <img className="profile-photo" src="/img/profile.jpg"></img>
+        </div>
         <div className="profile-summary">
           <p>
             Hi. I'm Steven. I started building websites as a teenager with HTML
@@ -135,13 +137,14 @@ function App() {
             make it happen. But once it does, it's kind of amazing.
           </p>
           <p>
-            This site, which I built with React, is a showcase of my coding
-            projects, experiments, and discussions. If you prefer a photo more
-            professional than my cat, you can visit my{" "}
-            <a href="https://www.linkedin.com/in/stevenlewiscoy/" target="_new">
-              LinkedIn
+            This site,{" "}
+            <a
+              href="https://github.com/ragmats/webdevblog/tree/main/src"
+              target="_new"
+            >
+              which I built with React
             </a>
-            .
+            , is a showcase of my coding projects, experiments, and discussions.
           </p>
         </div>
       </div>
@@ -184,19 +187,21 @@ function App() {
       <div>
         Featured Posts:
         <div className="featured-posts-container">
-          {featuredPosts.map((post) => {
-            return (
-              <button
-                className="btn-featured"
-                key={post.id}
-                onClick={() => filterPostsByID(post.id)}
-              >
-                <div className="featured-post">
-                  <img className="featured-post-image" src={post.image} />
-                </div>
-              </button>
-            );
-          })}
+          {featuredPosts
+            .sort((a, b) => new Date(a.date) - new Date(b.date))
+            .map((post) => {
+              return (
+                <button
+                  className="btn-featured"
+                  key={post.id}
+                  onClick={() => filterPostsByID(post.id)}
+                >
+                  <div className="featured-post">
+                    <img className="featured-post-image" src={post.image} />
+                  </div>
+                </button>
+              );
+            })}
         </div>
       </div>
 

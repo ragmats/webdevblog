@@ -122,20 +122,26 @@ body {
 }
 
 .profile {
+  border: 1px solid purple;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2em;
-  padding: 2em;
+  margin: 2em 0;
+}
+
+.profile-photo-container {
+  border: 1px solid black;
+  height: 200px;
+  min-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .profile-photo {
-  box-shadow: 0px 0px 2px 2px black;
-  min-width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: url("/img/profile.jpg");
-  background-size: cover;
+  height: 100%;
+  width: auto;
+  margin-left: -70px;
 }
 
 .profile-summary {
@@ -149,7 +155,7 @@ body {
 .post {
   border: 1px solid black;
   border-radius: 25px;
-  margin: 1em;
+  margin: 2em 0;
   padding: 1em;
 }
 
@@ -162,6 +168,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+  margin: 2em 0;
 }
 
 .featured-post {
