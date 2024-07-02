@@ -126,6 +126,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 2em;
   margin: 2em 0;
 }
@@ -157,17 +158,6 @@ body {
   margin: 2em 0;
 }
 
-.post {
-  border: 1px solid black;
-  border-radius: 25px;
-  margin: 2em 0;
-  padding: 1em;
-}
-
-.post-image {
-  width: 100%;
-}
-
 .featured-posts-container {
   border: 1px solid red;
   display: flex;
@@ -193,6 +183,23 @@ body {
 }
 
 .featured-post-image {
+  width: 100%;
+}
+
+.dev-blog-container {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.post {
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 1em;
+}
+
+.post-image {
   width: 100%;
 }
 
