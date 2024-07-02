@@ -13,6 +13,7 @@ import postData from "./posts.json";
 // TODO Add styles (light mode default)
 // TODO Add icons to site (LinkedIn, etc.)
 // TODO Add dark mode
+// TODO Add header anchor links to pofile, featured posts, and dev log, dark mode iconm home icon
 // ? Do posts need a darkmode version of the images?
 // TODO Add action button
 // TODO ADD loading/paginated posts
@@ -21,44 +22,6 @@ function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
   const [selectedTypes, setSelectedTypes] = useState(new Set());
   const [selectedTags, setSelectedTags] = useState(new Set());
-
-  useEffect(() => {
-    // Convert sets to arrays to enable some method
-    const selectedTypesArray = Array.from(selectedTypes);
-    const selectedTagsArray = Array.from(selectedTags);
-
-    if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
-      // Filter posts that have any of the selected types
-      setFilteredPosts(
-        postData.filter((post) => selectedTypesArray.includes(post.type))
-      );
-    } else if (
-      selectedTypesArray.length === 0 &&
-      selectedTagsArray.length > 0
-    ) {
-      // Filter posts that have any of the selected tags
-      setFilteredPosts(
-        postData.filter((post) =>
-          selectedTagsArray.some((tag) => post.tags.includes(tag))
-        )
-      );
-    } else if (selectedTypesArray.length > 0 && selectedTagsArray.length > 0) {
-      // Filter posts that have any of the selected types and any of the selected tags
-      setFilteredPosts(
-        postData.filter((post) =>
-          selectedTagsArray.some(
-            (tag) =>
-              selectedTypesArray.includes(post.type) && post.tags.includes(tag)
-          )
-        )
-      );
-    } else {
-      setFilteredPosts(postData);
-    }
-  }, [selectedTypes, selectedTags]);
-
-  // Create array of featured posts sorted by date
-  const featuredPosts = postData.filter((post) => post.featured === true);
 
   function updateSelectedTypes(type) {
     setSelectedTypes((currentSelectedTypes) => {
@@ -78,10 +41,6 @@ function App() {
     });
   }
 
-  function filterPostsByID(id) {
-    setFilteredPosts(postData.filter((post) => post.id === id));
-  }
-
   function clearAllTags() {
     setSelectedTypes(new Set());
     setSelectedTags(new Set());
@@ -90,9 +49,7 @@ function App() {
   return (
     <>
       <CubeHeader />
-
       <Profile />
-
       <Filters
         postData={postData}
         selectedTypes={selectedTypes}
@@ -102,14 +59,11 @@ function App() {
         clearAllTags={clearAllTags}
         filteredPostLen={filteredPosts.length}
       />
-
-      <Featured
-        featuredPosts={featuredPosts}
-        filterPostsByID={filterPostsByID}
-      />
-
+      <Featured postData={postData} setFilteredPosts={setFilteredPosts} />
       <DevBlog
+        postData={postData}
         filteredPosts={filteredPosts}
+        setFilteredPosts={setFilteredPosts}
         selectedTypes={selectedTypes}
         selectedTags={selectedTags}
         clearAllTags={clearAllTags}

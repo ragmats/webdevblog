@@ -1,11 +1,50 @@
+import { useEffect } from "react";
+
 export default function DevBlog({
+  postData,
+  filteredPosts,
+  setFilteredPosts,
   selectedTypes,
   selectedTags,
-  filteredPosts,
   clearAllTags,
   updateSelectedTypes,
   updateSelectedTags,
 }) {
+  useEffect(() => {
+    // Convert sets to arrays to enable some method
+    const selectedTypesArray = Array.from(selectedTypes);
+    const selectedTagsArray = Array.from(selectedTags);
+
+    if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
+      // Filter posts that have any of the selected types
+      setFilteredPosts(
+        postData.filter((post) => selectedTypesArray.includes(post.type))
+      );
+    } else if (
+      selectedTypesArray.length === 0 &&
+      selectedTagsArray.length > 0
+    ) {
+      // Filter posts that have any of the selected tags
+      setFilteredPosts(
+        postData.filter((post) =>
+          selectedTagsArray.some((tag) => post.tags.includes(tag))
+        )
+      );
+    } else if (selectedTypesArray.length > 0 && selectedTagsArray.length > 0) {
+      // Filter posts that have any of the selected types and any of the selected tags
+      setFilteredPosts(
+        postData.filter((post) =>
+          selectedTagsArray.some(
+            (tag) =>
+              selectedTypesArray.includes(post.type) && post.tags.includes(tag)
+          )
+        )
+      );
+    } else {
+      setFilteredPosts(postData);
+    }
+  }, [selectedTypes, selectedTags]);
+
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
     const date = new Date(dateString);
