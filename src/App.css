@@ -1,20 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-:root {
-  --title-container-height: 50svh;
+/* Limit how small cube will get */
+@media (height <= 800px) {
+  :root {
+    --title-container-height: 400px;
+  }
+}
+
+@media (height > 800px) {
+  :root {
+    --title-container-height: 50svh;
+  }
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-#root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* text-align: center; */
 }
 
 body {
@@ -55,7 +57,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5svh;
+  font-size: calc(0.05 * var(--title-container-height));
   animation: fede-in-side 1s forwards;
   text-align: center;
   padding: 1em;

@@ -8,13 +8,14 @@ import Filters from "./components/Filters";
 import Profile from "./components/Profile";
 import postData from "./posts.json";
 
-// TODO Break into components
-// TODO Add post slugs?
+// TODO Add post slugs? Separate pages? React Router?
 // TODO Populate postData with real posts
 // TODO Add styles (light mode default)
 // TODO Add icons to site (LinkedIn, etc.)
 // TODO Add dark mode
+// ? Do posts need a darkmode version of the images?
 // TODO Add action button
+// TODO ADD loading/paginated posts
 
 function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
