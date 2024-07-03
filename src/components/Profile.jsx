@@ -2,7 +2,7 @@ export default function Profile() {
   return (
     <div className="profile">
       <div className="profile-photo-container">
-        <img className="profile-photo" src="img/profile.jpg"></img>
+        <img className="profile-photo" src="/img/profile.jpg"></img>
       </div>
       <div className="profile-summary">
         <p>

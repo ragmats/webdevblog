@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function DevBlog({
   postData,
@@ -62,7 +63,9 @@ export default function DevBlog({
         .map((post) => {
           return (
             <div className="post" key={post.id}>
-              <p>{post.title}</p>
+              <p>
+                <Link to={`posts/${post.id}`}>{post.title}</Link>
+              </p>
               <p>
                 {/* Post Type */}
                 <button
