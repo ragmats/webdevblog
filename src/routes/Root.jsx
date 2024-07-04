@@ -7,10 +7,11 @@ import DevBlog from "../components/DevBlog";
 import Featured from "../components/Featured";
 import Filters from "../components/Filters";
 import Profile from "../components/Profile";
-import postData from "../posts.json";
+import postData from "../data/posts.json";
 
 // TODO Add post slugs
 // TODO Add error page
+// TODO Make filters work with params so they are linkable
 // TODO Populate postData with real posts
 // TODO Add styles (light mode default)
 // TODO Add icons to site (LinkedIn, etc.)

@@ -64,7 +64,7 @@ export default function DevBlog({
           return (
             <div className="post" key={post.id}>
               <p>
-                <Link to={`posts/${post.id}`}>{post.title}</Link>
+                <Link to={`posts/${post.slug}`}>{post.title}</Link>
               </p>
               <p>
                 {/* Post Type */}
