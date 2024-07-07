@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Filters({
   postData,
   selectedTypes,
   selectedTags,
   updateSelectedTypes,
   updateSelectedTags,
-  clearAllTags,
+  clearAllFilters,
   filteredPostLen,
 }) {
   // Create sorted array of all post types without duplicates
@@ -16,6 +18,8 @@ export default function Filters({
   const postTagsSet = new Set();
   postData.map((post) => post.tags.map((tag) => postTagsSet.add(tag)));
   const allPostTags = Array.from(postTagsSet).sort();
+
+  const navigate = useNavigate();
 
   return (
     <div className="filters-container">
@@ -29,6 +33,7 @@ export default function Filters({
             key={crypto.randomUUID()}
             onClick={() => {
               updateSelectedTypes(type);
+              navigate("/");
             }}
           >
             {type}
@@ -44,13 +49,16 @@ export default function Filters({
               selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
             }
             key={crypto.randomUUID()}
-            onClick={() => updateSelectedTags(tag)}
+            onClick={() => {
+              updateSelectedTags(tag);
+              navigate("/");
+            }}
           >
             {tag}
           </button>
         ))}
-        {filteredPostLen !== postData.length ? (
-          <button onClick={() => clearAllTags()}>// reset filters //</button>
+        {filteredPostLen !== postData.length && location.pathname === "/" ? (
+          <button onClick={() => clearAllFilters()}>// reset filters //</button>
         ) : null}
       </div>
     </div>

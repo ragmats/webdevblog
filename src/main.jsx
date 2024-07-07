@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import NotFound from "./components/NotFound.jsx";
 import Post from "./routes/Post.jsx";
 import App from "./routes/Root.jsx";
 
@@ -8,11 +13,18 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: "Error: coming soon",
     children: [
       {
         path: "posts/:slug",
         element: <Post />,
+      },
+      {
+        path: "*",
+        element: <Navigate to="/notfound" />,
+      },
+      {
+        path: "notfound",
+        element: <NotFound />,
       },
     ],
   },

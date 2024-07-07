@@ -7,7 +7,8 @@ export default function DevBlog({
   setFilteredPosts,
   selectedTypes,
   selectedTags,
-  clearAllTags,
+  selectedFeaturedId,
+  clearAllFilters,
   updateSelectedTypes,
   updateSelectedTags,
 }) {
@@ -16,7 +17,15 @@ export default function DevBlog({
     const selectedTypesArray = Array.from(selectedTypes);
     const selectedTagsArray = Array.from(selectedTags);
 
-    if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
+    if (selectedFeaturedId) {
+      // Filter posts for that featured ID
+      setFilteredPosts(
+        postData.filter((post) => post.id === selectedFeaturedId)
+      );
+    } else if (
+      selectedTypesArray.length > 0 &&
+      selectedTagsArray.length === 0
+    ) {
       // Filter posts that have any of the selected types
       setFilteredPosts(
         postData.filter((post) => selectedTypesArray.includes(post.type))
@@ -44,7 +53,7 @@ export default function DevBlog({
     } else {
       setFilteredPosts(postData);
     }
-  }, [selectedTypes, selectedTags]);
+  }, [selectedTypes, selectedTags, selectedFeaturedId]);
 
   // Split MM/DD/YYYY date into parts for better formatting control
   function formatDate(dateString) {
@@ -64,7 +73,9 @@ export default function DevBlog({
           return (
             <div className="post" key={post.id}>
               <p>
-                <Link to={`posts/${post.slug}`}>{post.title}</Link>
+                <Link onClick={clearAllFilters} to={`/posts/${post.slug}`}>
+                  {post.title}
+                </Link>
               </p>
               <p>
                 {/* Post Type */}
@@ -75,7 +86,7 @@ export default function DevBlog({
                       : "btn-tag"
                   }
                   onClick={() => {
-                    clearAllTags();
+                    clearAllFilters();
                     updateSelectedTypes(post.type);
                   }}
                 >
@@ -93,7 +104,7 @@ export default function DevBlog({
                   }
                   key={crypto.randomUUID()}
                   onClick={() => {
-                    clearAllTags();
+                    clearAllFilters();
                     updateSelectedTags(tag);
                   }}
                 >
