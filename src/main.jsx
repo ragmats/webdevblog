@@ -18,15 +18,15 @@ const router = createBrowserRouter([
         path: "posts/:slug",
         element: <Post />,
       },
-      {
-        path: "*",
-        element: <Navigate to="/notfound" />,
-      },
-      {
-        path: "notfound",
-        element: <NotFound />,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/notfound" />,
+  },
+  {
+    path: "notfound",
+    element: <NotFound />,
   },
 ]);
 

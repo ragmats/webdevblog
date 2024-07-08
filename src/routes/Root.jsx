@@ -9,18 +9,21 @@ import Profile from "../components/Profile";
 import postData from "../data/posts.json";
 import { createSlugMap } from "../utils/createSlugMap";
 
-// TODO Build sing post page
-// TODO Build error page
-// TODO Make filters work with params so they are linkable
-// TODO Add navbar? Syled like array: [ Profile, Filters, Devblog, Light/Dark, Home ]
+// TODO Add styles to main devlog
+// TODO Add styles to main single post page based on devblog
+// TODO Add styles to other sections of homepage
+// TODO Add navbar (skip links)? Styled like array: [ Profile, Filters, Devblog, Light/Dark, Home ]
 // TODO Populate postData with real posts
-// TODO Add styles (light mode default)
+// TODO Add final pre-launch styles (light mode default)
+// TODO Launch
+// TODO Make filters work with params so they are linkable
+// TODO Make it so single post pages jump down to post start (skip links?)
+// TODO Make it so main dev blog posts are abbreviated and have a "more..." link?
 // TODO Add icons to site (LinkedIn, etc.)
 // TODO Add dark mode
-// TODO Add header anchor links to pofile, featured posts, and dev log, dark mode iconm home icon
 // ? Do posts need a darkmode version of the images?
 // TODO Add action button?
-// TODO ADD loading/paginated posts
+// TODO Add loading/paginated posts
 
 function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
