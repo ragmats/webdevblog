@@ -66,58 +66,69 @@ export default function DevBlog({
 
   return (
     <div className="dev-blog-container">
-      <p>Dev Blog</p> {filteredPosts.length === 0 && <p>No posts!</p>}
+      <h2>Dev Blog</h2> {filteredPosts.length === 0 && <p>No posts!</p>}
       {filteredPosts
         .sort((a, b) => new Date(b.date) - new Date(a.date))
         .map((post) => {
           return (
             <div className="post" key={post.id}>
-              <p>
+              <h3>
                 <Link onClick={clearAllFilters} to={`/posts/${post.slug}`}>
                   {post.title}
                 </Link>
-              </p>
-              <p>
-                {/* Post Type */}
-                <button
-                  className={
-                    selectedTypes.has(post.type)
-                      ? "btn-tag btn-tag-selected"
-                      : "btn-tag"
-                  }
-                  onClick={() => {
-                    clearAllFilters();
-                    updateSelectedTypes(post.type);
-                  }}
-                >
-                  {post.type}
-                </button>
-              </p>
-              <p>{formatDate(post.date)}</p>
-              {/* Post Tags */}
-              {post.tags.sort().map((tag) => (
-                <button
-                  className={
-                    selectedTags.has(tag)
-                      ? "btn-tag btn-tag-selected"
-                      : "btn-tag"
-                  }
-                  key={crypto.randomUUID()}
-                  onClick={() => {
-                    clearAllFilters();
-                    updateSelectedTags(tag);
-                  }}
-                >
-                  {tag}
-                </button>
-              ))}
+              </h3>
               {post.image ? (
                 <img className="post-image" src={post.image} />
               ) : null}
+              <div className="dev-blog-sub-header">
+                {formatDate(post.date)}
+                {/* Post Type */}
+                <span>
+                  <span>// </span>
+                  <button
+                    className={
+                      selectedTypes.has(post.type)
+                        ? "btn-type btn-type-selected"
+                        : "btn-type"
+                    }
+                    onClick={() => {
+                      clearAllFilters();
+                      updateSelectedTypes(post.type);
+                    }}
+                  >
+                    {post.type}
+                  </button>
+                </span>
+              </div>
               <p>
                 {/* The following danerously set InnerHTML is a trusted source */}
                 <span dangerouslySetInnerHTML={{ __html: post.body }} />
               </p>
+              {/* Post Tags */}
+              <div className="dev-blog-tags">
+                <span>{"[ "}</span>
+                {post.tags.sort().map((tag) => (
+                  <span key={crypto.randomUUID()}>
+                    <button
+                      className={
+                        selectedTags.has(tag)
+                          ? "btn-tag btn-tag-selected"
+                          : "btn-tag"
+                      }
+                      onClick={() => {
+                        clearAllFilters();
+                        updateSelectedTags(tag);
+                      }}
+                    >
+                      {tag}
+                    </button>
+                    {post.tags.indexOf(tag) !== post.tags.length - 1 ? (
+                      <span>,&nbsp;</span>
+                    ) : null}
+                  </span>
+                ))}
+                <span>{"  ]"}</span>
+              </div>
             </div>
           );
         })}
