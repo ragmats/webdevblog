@@ -5,7 +5,11 @@
     "title": "Some Experiment",
     "date": "01/5/2024",
     "type": "Experiment",
-    "tags": ["Tag1", "99", "Tag6"],
+    "tags": [
+      "Tag1",
+      "99",
+      "Tag6"
+    ],
     "image": null,
     "body": "Some Body",
     "slug": "some-experiment"
@@ -16,10 +20,14 @@
     "title": "Some Discussion with a Much Longer Title, Perhaps Very Long, Than Before for Testing?",
     "date": "06/27/2024",
     "type": "Discussion",
-    "tags": ["Tag1", "Tag5", "Tag6"],
+    "tags": [
+      "Tag1",
+      "Tag5",
+      "Tag6"
+    ],
     "image": null,
     "body": "Some Body",
-    "slug": "some-discussion"
+    "slug": "some-discussion-with-a-much-longer-title-perhaps-very-long-than-before-for-testing"
   },
   {
     "id": 2,
@@ -27,7 +35,11 @@
     "title": "GridSquid",
     "date": "06/26/2024",
     "type": "Project",
-    "tags": ["Tag2", "Tag4", "Tag5"],
+    "tags": [
+      "Tag2",
+      "Tag4",
+      "Tag5"
+    ],
     "image": "/img/gs_logo_long.svg",
     "body": "Some Body",
     "slug": "gridsquid"
@@ -38,7 +50,12 @@
     "title": "Oopsie",
     "date": "06/25/2024",
     "type": "Project",
-    "tags": ["Tag1", "Tag2", "Tag3", "Random"],
+    "tags": [
+      "Tag1",
+      "Tag2",
+      "Tag3",
+      "Random"
+    ],
     "image": "/img/oopsie_logo.svg",
     "body": "Some Body with <b><i>dangerous</i></b> html!",
     "slug": "oopsie"

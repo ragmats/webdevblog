@@ -28,8 +28,20 @@ a:hover {
   color: darkcyan;
 }
 
+h1 {
+  font-size: 3.5em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
 body {
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   max-width: 1000px;
   margin: 0 auto;
   perspective: 2000px;
@@ -198,23 +210,34 @@ body {
 }
 
 .dev-blog-container {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3.5em;
+  margin: 1em 0 0 0;
 }
 
 .post {
+  /* border: 1px solid black; */
+  /* border-radius: 25px; */
+}
+
+.post-inner {
   border: 1px solid black;
-  border-radius: 25px;
-  padding: 1em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
+  margin: 0.5em 0 0 0;
+  padding: 2em;
+}
+
+.post-image {
+  /* border: 1px solid black; */
+  width: 100%;
 }
 
 .dev-blog-sub-header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -226,14 +249,10 @@ body {
 }
 
 .dev-blog-tags {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   width: 100%;
   justify-content: end;
-}
-
-.post-image {
-  width: 100%;
 }
 
 .error {
