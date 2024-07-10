@@ -1,5 +1,9 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Title from "./DevBlog/Title";
+import SubHeader from "./DevBlog/SubHeader";
+import Image from "./DevBlog/Image";
+import Body from "./DevBlog/Body";
+import Tags from "./DevBlog/Tags";
 
 export default function DevBlog({
   postData,
@@ -55,18 +59,9 @@ export default function DevBlog({
     }
   }, [selectedTypes, selectedTags, selectedFeaturedId]);
 
-  // Split MM/DD/YYYY date into parts for better formatting control
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
-    return `${month}.${day}.${year}`;
-  }
-
   return (
     <>
-      <h2>Dev Blog</h2>
+      <h2>#dev blog</h2>
       <div className="dev-blog-container">
         {filteredPosts.length === 0 && <p>No posts!</p>}
         {filteredPosts
@@ -74,65 +69,21 @@ export default function DevBlog({
           .map((post) => {
             return (
               <div className="post" key={post.id}>
-                <h3>
-                  <Link onClick={clearAllFilters} to={`/posts/${post.slug}`}>
-                    {post.title}
-                  </Link>
-                </h3>
-                <div className="post-inner">
-                  <div className="dev-blog-sub-header">
-                    {formatDate(post.date)}
-                    {/* Post Type */}
-                    <span>
-                      <span>// </span>
-                      <button
-                        className={
-                          selectedTypes.has(post.type)
-                            ? "btn-type btn-type-selected"
-                            : "btn-type"
-                        }
-                        onClick={() => {
-                          clearAllFilters();
-                          updateSelectedTypes(post.type);
-                        }}
-                      >
-                        {post.type}
-                      </button>
-                    </span>
-                  </div>
-                  {post.image ? (
-                    <img className="post-image" src={post.image} />
-                  ) : null}
-                  <p>
-                    {/* The following danerously set InnerHTML is a trusted source */}
-                    <span dangerouslySetInnerHTML={{ __html: post.body }} />
-                  </p>
-                  {/* Post Tags */}
-                  <div className="dev-blog-tags">
-                    <span>&#91;&nbsp;</span>
-                    {post.tags.sort().map((tag) => (
-                      <span key={crypto.randomUUID()}>
-                        <button
-                          className={
-                            selectedTags.has(tag)
-                              ? "btn-tag btn-tag-selected"
-                              : "btn-tag"
-                          }
-                          onClick={() => {
-                            clearAllFilters();
-                            updateSelectedTags(tag);
-                          }}
-                        >
-                          {tag}
-                        </button>
-                        {post.tags.indexOf(tag) !== post.tags.length - 1 ? (
-                          <span>,&nbsp;</span>
-                        ) : null}
-                      </span>
-                    ))}
-                    <span>&nbsp;&#93;</span>
-                  </div>
-                </div>
+                <Title post={post} clearAllFilters={clearAllFilters} />
+                <SubHeader
+                  post={post}
+                  selectedTypes={selectedTypes}
+                  clearAllFilters={clearAllFilters}
+                  updateSelectedTypes={updateSelectedTypes}
+                />
+                <Image post={post} />
+                <Body post={post} />
+                <Tags
+                  post={post}
+                  selectedTags={selectedTags}
+                  clearAllFilters={clearAllFilters}
+                  updateSelectedTags={updateSelectedTags}
+                />
               </div>
             );
           })}

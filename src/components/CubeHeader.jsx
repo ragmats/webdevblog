@@ -18,7 +18,6 @@ export default function CubeHeader() {
           <div className="face face-bottom"></div>
         </div>
       </div>
-      <Link to="/">home</Link>
     </>
   );
 }

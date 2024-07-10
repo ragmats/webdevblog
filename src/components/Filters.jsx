@@ -22,45 +22,62 @@ export default function Filters({
   const navigate = useNavigate();
 
   return (
-    <div className="filters-container">
-      <div>
-        Post Types:
-        {allPostTypes.map((type) => (
-          <button
-            className={
-              selectedTypes.has(type) ? "btn-tag btn-tag-selected" : "btn-tag"
-            }
-            key={crypto.randomUUID()}
-            onClick={() => {
-              updateSelectedTypes(type);
-              navigate("/");
-            }}
-          >
-            {type}
-          </button>
-        ))}
-      </div>
+    <>
+      <h2>#post filters</h2>
+      <div className="filters-container">
+        <div className="filters-types-container">
+          <span>Types: &#91;&nbsp;</span>
+          {allPostTypes.map((type) => (
+            <span key={crypto.randomUUID()}>
+              <button
+                className={
+                  selectedTypes.has(type)
+                    ? "btn-tag btn-tag-selected"
+                    : "btn-tag"
+                }
+                onClick={() => {
+                  updateSelectedTypes(type);
+                  navigate("/");
+                }}
+              >
+                {type}
+              </button>
+              {allPostTypes.indexOf(type) !== allPostTypes.length - 1 ? (
+                <span>,&nbsp;</span>
+              ) : null}
+            </span>
+          ))}
+          <span>&nbsp;&#93;</span>
+        </div>
 
-      <div>
-        Tags:
-        {allPostTags.map((tag) => (
-          <button
-            className={
-              selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
-            }
-            key={crypto.randomUUID()}
-            onClick={() => {
-              updateSelectedTags(tag);
-              navigate("/");
-            }}
-          >
-            {tag}
-          </button>
-        ))}
-        {filteredPostLen !== postData.length && location.pathname === "/" ? (
-          <button onClick={() => clearAllFilters()}>// reset filters //</button>
-        ) : null}
+        <div className="filters-tags-container">
+          <span>Tags: &#91;&nbsp;</span>
+          {allPostTags.map((tag) => (
+            <span key={crypto.randomUUID()}>
+              <button
+                className={
+                  selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
+                }
+                onClick={() => {
+                  updateSelectedTags(tag);
+                  navigate("/");
+                }}
+              >
+                {tag}
+              </button>
+              {allPostTags.indexOf(tag) !== allPostTags.length - 1 ? (
+                <span>,&nbsp;</span>
+              ) : null}
+            </span>
+          ))}
+          <span>&nbsp;&#93;</span>
+          {filteredPostLen !== postData.length && location.pathname === "/" ? (
+            <button onClick={() => clearAllFilters()}>
+              // reset filters //
+            </button>
+          ) : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
