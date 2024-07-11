@@ -17,31 +17,39 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
         clearAllFilters={clearAllFilters}
         isFiltered={isFiltered}
       />
-      <div className="nav">
-        <span>&#91;&nbsp;</span>
-        <a onClick={() => navigate("/")} href="#profile">
-          profile
-        </a>
-        ,&nbsp;
-        <a onClick={() => navigate("/")} href="#filters">
-          filters
-        </a>
-        ,&nbsp;
-        <a onClick={() => navigate("/")} href="#devblog">
-          blog
-        </a>
-        ,&nbsp;
-        <button
-          className="btn"
-          onClick={() => {
-            clearAllFilters();
-            navigate("/");
-          }}
-        >
-          home
-        </button>
-        <span>&nbsp;&#93;</span>
-      </div>
+      <span className="nav">
+        <span>
+          &#91;&nbsp;
+          <a onClick={() => navigate("/")} href="#profile">
+            profile
+          </a>
+          ,&nbsp;
+        </span>
+        <span>
+          <a onClick={() => navigate("/")} href="#filters">
+            filters
+          </a>
+          ,&nbsp;
+        </span>
+        <span>
+          <a onClick={() => navigate("/")} href="#devblog">
+            blog
+          </a>
+          ,&nbsp;
+        </span>
+        <div>
+          <button
+            className="btn"
+            onClick={() => {
+              clearAllFilters();
+              navigate("/");
+            }}
+          >
+            home
+          </button>
+          <span>&nbsp;&#93;</span>
+        </div>
+      </span>
     </div>
   );
 }

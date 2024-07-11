@@ -92,6 +92,9 @@ body {
 
 .nav {
   /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   background-color: whitesmoke;
 }
 
@@ -232,10 +235,14 @@ body {
 
 .filters-types-container {
   /* border: 1px solid orange; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filters-tags-container {
   /* border: 1px solid orange; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .featured-posts-container {
@@ -321,7 +328,6 @@ body {
   /* border: 1px solid green; */
   display: flex;
   flex-wrap: wrap;
-  display: flex;
   width: 100%;
   justify-content: end;
 }

@@ -65,10 +65,11 @@ export default function Filters({
               </button>
               {allPostTags.indexOf(tag) !== allPostTags.length - 1 ? (
                 <span>,&nbsp;</span>
-              ) : null}
+              ) : (
+                <span>&nbsp;&#93;</span>
+              )}
             </span>
           ))}
-          <span>&nbsp;&#93;</span>
         </div>
       </div>
     </>

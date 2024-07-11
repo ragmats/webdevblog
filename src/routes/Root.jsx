@@ -11,7 +11,6 @@ import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 
 // TODO Clicking slug jumps to bottom of next page
-// TODO End bracket on types/tags sometimes orphans when wrapping
 // TODO make profile switch to flex column on mobile
 // TODO Footer?
 // TODO Populate postData with real posts

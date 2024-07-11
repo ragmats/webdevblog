@@ -25,10 +25,13 @@ export default function Tags({
           >
             {tag}
           </button>
-          {tags.indexOf(tag) !== tags.length - 1 ? <span>,&nbsp;</span> : null}
+          {tags.indexOf(tag) !== tags.length - 1 ? (
+            <span>,&nbsp;</span>
+          ) : (
+            <span>&nbsp;&#93;</span>
+          )}
         </span>
       ))}
-      <span>&nbsp;&#93;</span>
     </div>
   );
 }
