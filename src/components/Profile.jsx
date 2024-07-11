@@ -26,7 +26,8 @@ export default function Profile() {
             >
               which I built with React
             </a>
-            , is a showcase of my coding projects, experiments, and discussions.
+            , is a sandbox/showcase of my dev projects, along with some
+            experiments and discussions.
           </p>
           <span>
             &#91;&nbsp;
