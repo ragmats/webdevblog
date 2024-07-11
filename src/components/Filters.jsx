@@ -6,6 +6,7 @@ export default function Filters({
   selectedTags,
   updateSelectedTypes,
   updateSelectedTags,
+  clearFeatured,
 }) {
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
@@ -34,6 +35,7 @@ export default function Filters({
                     : "btn-tag"
                 }
                 onClick={() => {
+                  clearFeatured();
                   updateSelectedTypes(type);
                   navigate("/");
                 }}
@@ -57,6 +59,7 @@ export default function Filters({
                   selectedTags.has(tag) ? "btn-tag btn-tag-selected" : "btn-tag"
                 }
                 onClick={() => {
+                  clearFeatured();
                   updateSelectedTags(tag);
                   navigate("/");
                 }}

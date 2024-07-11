@@ -10,8 +10,7 @@ import postData from "../data/posts.json";
 import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 
-// TODO Clicking slug jumps to bottom of next page
-// TODO make profile switch to flex column on mobile
+// TODO Page titles
 // TODO Footer?
 // TODO Populate postData with real posts
 // TODO Add final pre-launch style touches (light mode default)
@@ -68,9 +67,19 @@ function App() {
   }
 
   function clearAllFilters() {
-    setSelectedTypes(new Set());
-    setSelectedTags(new Set());
-    setSelectedFeaturedId(null);
+    if (
+      selectedTypes.size > 0 ||
+      selectedTags.size > 0 ||
+      selectedFeaturedId !== null
+    ) {
+      setSelectedTypes(new Set());
+      setSelectedTags(new Set());
+      setSelectedFeaturedId(null);
+    }
+  }
+
+  function clearFeatured() {
+    if (selectedFeaturedId !== null) setSelectedFeaturedId(null);
   }
 
   return (
@@ -86,10 +95,13 @@ function App() {
             selectedTags={selectedTags}
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
+            clearFeatured={clearFeatured}
           />
           <Featured
             postData={postData}
+            selectedFeaturedId={selectedFeaturedId}
             setSelectedFeaturedId={setSelectedFeaturedId}
+            clearAllFilters={clearAllFilters}
           />
           <DevBlog
             postData={postData}

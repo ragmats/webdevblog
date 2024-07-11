@@ -43,6 +43,7 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
             onClick={() => {
               clearAllFilters();
               navigate("/");
+              window.scrollTo(0, 0);
             }}
           >
             home

@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Featured({ postData, setSelectedFeaturedId }) {
+export default function Featured({
+  postData,
+  clearAllFilters,
+  selectedFeaturedId,
+  setSelectedFeaturedId,
+}) {
   // Create array of featured posts sorted by date
   const featuredPosts = postData
     .filter((post) => post.featured === true)
@@ -19,9 +24,14 @@ export default function Featured({ postData, setSelectedFeaturedId }) {
         {featuredPosts.map((post) => {
           return (
             <button
-              className="btn-featured"
+              className={
+                post.id === selectedFeaturedId
+                  ? "btn-featured-selected"
+                  : "btn-featured"
+              }
               key={post.id}
               onClick={() => {
+                clearAllFilters();
                 filterPostsByID(post.id);
                 navigate("/");
               }}

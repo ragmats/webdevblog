@@ -275,6 +275,13 @@ body {
 }
 
 .btn-featured:hover {
+  border: 0;
+  background-color: white;
+  box-shadow: 0px 0px 2px 1px darkgray;
+}
+
+.btn-featured-selected {
+  border: 0;
   background-color: white;
   box-shadow: 0px 0px 2px 1px darkgray;
 }
@@ -397,4 +404,18 @@ body {
 
 .btn-tag-selected {
   background-color: gainsboro;
+}
+
+@media (width <= 650px) {
+  .profile-photo-container {
+    width: 200px;
+  }
+
+  .profile {
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* gap: 2em; */
+    /* padding: 2em; */
+  }
 }

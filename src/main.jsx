@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
+  ScrollRestoration,
 } from "react-router-dom";
 import NotFound from "./components/NotFound.jsx";
 import Post from "./routes/Post.jsx";
@@ -16,7 +17,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "posts/:slug",
-        element: <Post />,
+        element: (
+          <>
+            <ScrollRestoration />
+            <Post />
+          </>
+        ),
       },
     ],
   },
