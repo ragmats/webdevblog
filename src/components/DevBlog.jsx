@@ -61,7 +61,7 @@ export default function DevBlog({
 
   return (
     <>
-      <h2>#dev blog</h2>
+      <h2 id="devblog">#dev blog</h2>
       <div className="dev-blog-container">
         {filteredPosts.length === 0 && <p>No posts!</p>}
         {filteredPosts

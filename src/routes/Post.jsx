@@ -1,22 +1,45 @@
 import { useParams, useOutletContext, Navigate } from "react-router-dom";
+import Body from "../components/DevBlog/Body";
+import Image from "../components/DevBlog/Image";
+import SubHeader from "../components/DevBlog/SubHeader";
+import Tags from "../components/DevBlog/Tags";
+import Title from "../components/DevBlog/Title";
 
 export default function Post() {
   const { slug } = useParams();
-  const [slugMap] = useOutletContext();
+  const [
+    slugMap,
+    postData,
+    setFilteredPosts,
+    selectedTypes,
+    selectedTags,
+    clearAllFilters,
+    updateSelectedTypes,
+    updateSelectedTags,
+  ] = useOutletContext();
 
-  const { id, featured, title, date, type, tags, image, body } = slugMap[slug];
+  const post = slugMap[slug];
 
-  if (!id) return <Navigate to="/notfound" />;
+  if (!post.id) return <Navigate to="/notfound" />;
   return (
-    <>
-      <p>id: {id}</p>
-      <p>featured: {featured}</p>
-      <p>title: {title}</p>
-      <p>date: {date}</p>
-      <p>type: {type}</p>
-      <p>tags: {tags}</p>
-      <p>image: {image}</p>
-      <p>body: {body}</p>
-    </>
+    <div className="dev-blog-container">
+      <div className="post">
+        <Title post={post} />
+        <SubHeader
+          post={post}
+          selectedTypes={selectedTypes}
+          clearAllFilters={clearAllFilters}
+          updateSelectedTypes={updateSelectedTypes}
+        />
+        <Image post={post} />
+        <Body post={post} />
+        <Tags
+          post={post}
+          selectedTags={selectedTags}
+          clearAllFilters={clearAllFilters}
+          updateSelectedTags={updateSelectedTags}
+        />
+      </div>
+    </div>
   );
 }

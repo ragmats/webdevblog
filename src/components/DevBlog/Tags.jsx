@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Tags({
   post: { tags },
   selectedTags,
   clearAllFilters,
   updateSelectedTags,
 }) {
+  const navigate = useNavigate();
+
   return (
     <div className="dev-blog-tags">
       <span>&#91;&nbsp;</span>
@@ -16,6 +20,7 @@ export default function Tags({
             onClick={() => {
               clearAllFilters();
               updateSelectedTags(tag);
+              navigate("/");
             }}
           >
             {tag}

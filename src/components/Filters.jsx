@@ -6,8 +6,6 @@ export default function Filters({
   selectedTags,
   updateSelectedTypes,
   updateSelectedTags,
-  clearAllFilters,
-  filteredPostLen,
 }) {
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
@@ -23,7 +21,7 @@ export default function Filters({
 
   return (
     <>
-      <h2>#post filters</h2>
+      <h2 id="filters">#post filters</h2>
       <div className="filters-container">
         <div className="filters-types-container">
           <span>Types: &#91;&nbsp;</span>
@@ -71,11 +69,6 @@ export default function Filters({
             </span>
           ))}
           <span>&nbsp;&#93;</span>
-          {filteredPostLen !== postData.length && location.pathname === "/" ? (
-            <button onClick={() => clearAllFilters()}>
-              // reset filters //
-            </button>
-          ) : null}
         </div>
       </div>
     </>
