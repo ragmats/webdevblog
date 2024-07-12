@@ -10,31 +10,34 @@ import NotFound from "./components/NotFound.jsx";
 import Post from "./routes/Post.jsx";
 import App from "./routes/Root.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "posts/:slug",
-        element: (
-          <>
-            <ScrollRestoration />
-            <Post />
-          </>
-        ),
-      },
-    ],
-  },
-  {
-    path: "*",
-    element: <Navigate to="/notfound" />,
-  },
-  {
-    path: "notfound",
-    element: <NotFound />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "posts/:slug",
+          element: (
+            <>
+              <ScrollRestoration />
+              <Post />
+            </>
+          ),
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <Navigate to="/notfound" />,
+    },
+    {
+      path: "notfound",
+      element: <NotFound />,
+    },
+  ],
+  { basename: "/webdevblog/" }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
