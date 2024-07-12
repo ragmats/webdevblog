@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      // Path to match base URL for GitHub Pages
-      const baseUrl = "/webdevblog/";
-
-      // Check if the current path does not already include the base URL
-      if (!window.location.pathname.startsWith(baseUrl)) {
-        // Redirect to the base URL plus the current path and query
-        window.location.replace(
-          baseUrl + window.location.pathname + window.location.search
-        );
-      }
+      window.location.replace(
+        "/webdevblog/#/" + window.location.pathname + window.location.search
+      );
     </script>
   </head>
   <body>
