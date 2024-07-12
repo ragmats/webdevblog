@@ -9,9 +9,11 @@ export default function CubeHeader() {
             <br />
             Web Developer
           </div>
-          <div className="face face-left">LinkedIn, GitHub, Hackerrank</div>
+          <div className="face face-left">
+            Web Apps, Components, Games, Design, Front-End
+          </div>
           <div className="face face-front">
-            JavaScript, HTML, CSS, React, Next.js, Git, Python, Django, Flask
+            JavaScript, HTML, CSS, React, Next.js, Python, Django, Flask, Git
           </div>
           <div className="face face-back"></div>
           <div className="face face-right"></div>

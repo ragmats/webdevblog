@@ -9,9 +9,9 @@ import Profile from "../components/Profile";
 import postData from "../data/posts.json";
 import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-// TODO Page titles
-// TODO Footer?
+// TODO Alt tags
 // TODO Populate postData with real posts
 // TODO Add final pre-launch style touches (light mode default)
 // TODO Launch!
@@ -114,6 +114,7 @@ function App() {
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
           />
+          <Footer />
         </>
       )}
       <Outlet

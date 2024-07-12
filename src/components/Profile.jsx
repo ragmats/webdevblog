@@ -1,7 +1,9 @@
 export default function Profile() {
   return (
     <>
-      <h2 id="profile">#hi</h2>
+      <h2 id="profile" className="margin-0">
+        #hi
+      </h2>
       <div className="profile">
         <div className="profile-photo-container">
           <img className="profile-photo" src="/img/profile.jpg"></img>

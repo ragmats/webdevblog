@@ -6,7 +6,7 @@ export default function NotFound() {
       <h1>Page not found!?</h1>
       <img className="error-image" src="/img/error.jpg" />
       <h2>
-        It's okay. There is always <Link to="/">home</Link>.
+        It's okay. You'll figure it <Link to="/">out</Link>.
       </h2>
     </div>
   );
