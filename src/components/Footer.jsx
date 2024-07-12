@@ -6,7 +6,7 @@ export default function Footer() {
         <img
           className="footer-photo"
           alt="Code cat in hoodie fast asleep at desk."
-          src="/img/asleep.jpg"
+          src={`${import.meta.env.VITE_BASE_URL}img/asleep.jpg`}
         ></img>
       </div>
       Copyright {date.getFullYear()} Steven Coy

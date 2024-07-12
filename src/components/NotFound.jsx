@@ -7,7 +7,7 @@ export default function NotFound() {
       <img
         className="error-image"
         alt="Code cat in hoodie in shock at error found!"
-        src="/img/error.jpg"
+        src={`${import.meta.env.VITE_BASE_URL}img/error.jpg`}
       />
       <h2>
         It's okay. You'll figure it <Link to="/">out</Link>.

@@ -9,7 +9,7 @@ export default function Profile() {
           <img
             className="profile-photo"
             alt="Code cat in hoodie working hard late at night."
-            src="/img/profile.jpg"
+            src={`${import.meta.env.VITE_BASE_URL}img/profile.jpg`}
           ></img>
         </div>
         <div className="profile-summary">

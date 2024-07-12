@@ -43,7 +43,7 @@ export default function Featured({
                       ? "featured-post-image logo"
                       : "featured-post-image"
                   }
-                  src={post.image}
+                  src={`${import.meta.env.VITE_BASE_URL}img/${post.image}`}
                 />
               </div>
             </button>
