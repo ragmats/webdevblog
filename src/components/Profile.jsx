@@ -6,7 +6,11 @@ export default function Profile() {
       </h2>
       <div className="profile">
         <div className="profile-photo-container">
-          <img className="profile-photo" src="/img/profile.jpg"></img>
+          <img
+            className="profile-photo"
+            alt="Code cat in hoodie working hard late at night."
+            src="/img/profile.jpg"
+          ></img>
         </div>
         <div className="profile-summary">
           <p>

@@ -3,7 +3,11 @@ export default function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-photo-container">
-        <img className="footer-photo" src="/img/asleep.jpg"></img>
+        <img
+          className="footer-photo"
+          alt="Code cat in hoodie fast asleep at desk."
+          src="/img/asleep.jpg"
+        ></img>
       </div>
       Copyright {date.getFullYear()} Steven Coy
     </div>

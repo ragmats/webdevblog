@@ -4,7 +4,11 @@ export default function NotFound() {
   return (
     <div className="error">
       <h1>Page not found!?</h1>
-      <img className="error-image" src="/img/error.jpg" />
+      <img
+        className="error-image"
+        alt="Code cat in hoodie in shock at error found!"
+        src="/img/error.jpg"
+      />
       <h2>
         It's okay. You'll figure it <Link to="/">out</Link>.
       </h2>
