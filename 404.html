@@ -11,13 +11,21 @@
       console.log("referrer: ", referrer);
 
       // Example: Redirect to homepage with referrer as parameter
-      if (referrer) {
+      // if (referrer) {
+      //   window.location.href = `/webdevblog?redirect=${encodeURIComponent(
+      //     referrer
+      //   )}`;
+      // } else {
+      //   window.location.href = "/webdevblog";
+      // }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const referrer = urlParams.get("referrer") || "/webdevblog";
         window.location.href = `/webdevblog?redirect=${encodeURIComponent(
           referrer
         )}`;
-      } else {
-        window.location.href = "/webdevblog";
-      }
+      });
     </script>
   </head>
   <body>
