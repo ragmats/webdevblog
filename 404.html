@@ -7,11 +7,13 @@
     <script>
       // Extract the current URL
       const currentUrl = window.location.href;
+      const indexOfLastSlash = currentUrl.lastIndexOf("/");
+      const possibleSlug = currentUrl.substr(indexOfLastSlash);
 
       // Example: Redirect to homepage with URL as parameter
       if (currentUrl) {
         window.location.href = `/webdevblog?redirect=${encodeURIComponent(
-          currentUrl
+          possibleSlug
         )}`;
       } else {
         window.location.href = "/webdevblog";
