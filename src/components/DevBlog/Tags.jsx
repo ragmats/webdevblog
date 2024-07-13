@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Tags({
   post: { tags },
@@ -7,6 +7,7 @@ export default function Tags({
   updateSelectedTags,
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="dev-blog-tags">
@@ -20,7 +21,7 @@ export default function Tags({
             onClick={() => {
               clearAllFilters();
               updateSelectedTags(tag);
-              navigate("/");
+              navigate("/", { state: { scrollTarget: "devblog" } });
             }}
           >
             {tag}

@@ -10,7 +10,7 @@ export default function Featured({ postData, clearAllFilters }) {
 
   return (
     <>
-      <h2 id="projects">#featured projects</h2>
+      <h2 id="projects">#projects</h2>
       <div className="featured-posts-container">
         {featuredPosts.map((post) => {
           return (

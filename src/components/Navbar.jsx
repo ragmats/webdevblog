@@ -20,27 +20,52 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
       <span className="nav">
         <span>
           &#91;&nbsp;
-          <a onClick={() => navigate("/")} href="#profile">
+          <button
+            className="btn"
+            onClick={() => {
+              navigate("/");
+              document.getElementById("profile").scrollIntoView();
+            }}
+          >
             profile
-          </a>
+          </button>
           ,&nbsp;
         </span>
         <span>
-          <a onClick={() => navigate("/")} href="#filters">
+          <button
+            className="btn"
+            onClick={() => {
+              navigate("/");
+              document.getElementById("filters").scrollIntoView();
+            }}
+          >
             filters
-          </a>
+          </button>
           ,&nbsp;
         </span>
         <span>
-          <a onClick={() => navigate("/")} href="#projects">
+          <button
+            className="btn"
+            onClick={() => {
+              navigate("/");
+              document.getElementById("projects").scrollIntoView();
+            }}
+          >
             projects
-          </a>
+          </button>
           ,&nbsp;
         </span>
+
         <span>
-          <a onClick={() => navigate("/")} href="#devblog">
+          <button
+            className="btn"
+            onClick={() => {
+              navigate("/");
+              document.getElementById("devblog").scrollIntoView();
+            }}
+          >
             blog
-          </a>
+          </button>
           ,&nbsp;
         </span>
         <div>

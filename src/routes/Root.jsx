@@ -70,6 +70,14 @@ function App() {
     }
   }, [selectedTypes, selectedTags]);
 
+  // Scroll to target if ones exists
+  useEffect(() => {
+    if (location.state && location.state.scrollTarget) {
+      const scrollTarget = location.state.scrollTarget;
+      document.getElementById(scrollTarget).scrollIntoView();
+    }
+  }, [location.state]);
+
   function updateSelectedTypes(type) {
     setSelectedTypes((currentSelectedTypes) => {
       const newSet = new Set(currentSelectedTypes);

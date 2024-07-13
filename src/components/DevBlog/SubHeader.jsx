@@ -1,5 +1,5 @@
 import { formatDate } from "../../utils/formatDate";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SubHeader({
   post: { date, type },
@@ -8,6 +8,7 @@ export default function SubHeader({
   updateSelectedTypes,
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="dev-blog-sub-header">
@@ -21,7 +22,7 @@ export default function SubHeader({
           onClick={() => {
             clearAllFilters();
             updateSelectedTypes(type);
-            navigate("/");
+            navigate("/", { state: { scrollTarget: "devblog" } });
           }}
         >
           {type}
