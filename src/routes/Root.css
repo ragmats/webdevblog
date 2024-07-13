@@ -36,6 +36,14 @@ a:hover {
   z-index: 99;
 }
 
+.jump-link {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 3.5em;
+}
+
 h1,
 h2,
 h3 {

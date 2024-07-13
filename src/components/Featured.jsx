@@ -10,7 +10,9 @@ export default function Featured({ postData, clearAllFilters }) {
 
   return (
     <>
-      <h2 id="projects">#projects</h2>
+      <div className="jump-link" id="projects">
+        <h2>#projects</h2>
+      </div>
       <div className="featured-posts-container">
         {featuredPosts.map((post) => {
           return (

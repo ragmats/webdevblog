@@ -1,9 +1,9 @@
 export default function Profile() {
   return (
     <>
-      <h2 id="profile" className="margin-0">
-        #hi
-      </h2>
+      <div className="jump-link" id="profile">
+        <h2>#hi</h2>
+      </div>
       <div className="profile">
         <div className="profile-photo-container">
           <img

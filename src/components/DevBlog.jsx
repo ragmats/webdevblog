@@ -52,7 +52,9 @@ export default function DevBlog({
 
   return (
     <>
-      <h2 id="devblog">#dev blog</h2>
+      <div className="jump-link" id="devblog">
+        <h2>#dev blog</h2>
+      </div>
       <div className="dev-blog-container">
         {filteredPosts.length === 0 && <p>No posts!</p>}
         {filteredPosts

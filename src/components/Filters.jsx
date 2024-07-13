@@ -21,7 +21,9 @@ export default function Filters({
 
   return (
     <>
-      <h2 id="filters">#post filters</h2>
+      <div className="jump-link" id="filters">
+        <h2>#filters</h2>
+      </div>
       <div className="filters-container">
         <div className="filters-types-container">
           <span>Types: &#91;&nbsp;</span>
