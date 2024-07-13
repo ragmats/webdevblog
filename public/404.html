@@ -10,9 +10,11 @@
 
       // Example: Redirect to homepage with referrer as parameter
       if (referrer) {
-        window.location.href = `/?redirect=${encodeURIComponent(referrer)}`;
+        window.location.href = `/webdevblog?redirect=${encodeURIComponent(
+          referrer
+        )}`;
       } else {
-        window.location.href = "/";
+        window.location.href = "/webdevblog";
       }
     </script>
   </head>
