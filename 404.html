@@ -8,6 +8,8 @@
       // Extract the referrer URL
       const referrer = document.referrer;
 
+      console.log("referrer: ", referrer);
+
       // Example: Redirect to homepage with referrer as parameter
       if (referrer) {
         window.location.href = `/webdevblog?redirect=${encodeURIComponent(
