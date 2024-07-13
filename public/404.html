@@ -8,7 +8,7 @@
       // Extract the current URL
       const currentUrl = window.location.href;
       const indexOfLastSlash = currentUrl.lastIndexOf("/");
-      const possibleSlug = currentUrl.substr(indexOfLastSlash);
+      const possibleSlug = currentUrl.substr(indexOfLastSlash + 1);
 
       // Example: Redirect to homepage with URL as parameter
       if (currentUrl) {
