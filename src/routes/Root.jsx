@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Root.css";
-import { useLocation, Outlet } from "react-router-dom";
+import {
+  useLocation,
+  Outlet,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import CubeHeader from "../components/CubeHeader";
 import DevBlog from "../components/DevBlog";
 import Featured from "../components/Featured";
@@ -29,6 +34,33 @@ function App() {
   const [selectedTags, setSelectedTags] = useState(new Set());
   const [selectedFeaturedId, setSelectedFeaturedId] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Create slug map for more efficient lookup of slugs on individual posts
+  const slugMap = createSlugMap(postData);
+
+  // Get possible slug from search params
+  const possibleSlug = searchParams.get("redirect");
+
+  // Navigate appropriately if there are search params from the 404 redirect
+  useEffect(() => {
+    if (possibleSlug) {
+      if (slugMap[possibleSlug]) {
+        console.log(
+          `slug "${possibleSlug}" found, redirecting to /posts/${possibleSlug}`
+        );
+        navigate(`/posts/${possibleSlug}`);
+      } else {
+        console.log(
+          `slug "${possibleSlug}" not found, redirecting to /notfound`
+        );
+        navigate(`/notfound/`);
+      }
+    } else if (searchParams.size > 0) navigate(`/notfound/`);
+  }, [searchParams]);
 
   useEffect(() => {
     if (
@@ -41,11 +73,6 @@ function App() {
       setIsFiltered(true);
     }
   }, [selectedTypes, selectedTags, selectedFeaturedId]);
-
-  const location = useLocation();
-
-  // Create slug map for more efficient lookup of slugs on individual posts
-  const slugMap = createSlugMap(postData);
 
   function updateSelectedTypes(type) {
     setSelectedTypes((currentSelectedTypes) => {
