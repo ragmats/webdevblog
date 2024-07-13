@@ -33,7 +33,6 @@ function App() {
   const [filteredPosts, setFilteredPosts] = useState(postData);
   const [selectedTypes, setSelectedTypes] = useState(new Set());
   const [selectedTags, setSelectedTags] = useState(new Set());
-  const [selectedFeaturedId, setSelectedFeaturedId] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
   const [searchParams] = useSearchParams();
 
@@ -64,16 +63,12 @@ function App() {
   }, [searchParams]);
 
   useEffect(() => {
-    if (
-      selectedTypes.size === 0 &&
-      selectedTags.size === 0 &&
-      !selectedFeaturedId
-    )
+    if (selectedTypes.size === 0 && selectedTags.size === 0)
       setIsFiltered(false);
     else {
       setIsFiltered(true);
     }
-  }, [selectedTypes, selectedTags, selectedFeaturedId]);
+  }, [selectedTypes, selectedTags]);
 
   function updateSelectedTypes(type) {
     setSelectedTypes((currentSelectedTypes) => {
@@ -94,19 +89,10 @@ function App() {
   }
 
   function clearAllFilters() {
-    if (
-      selectedTypes.size > 0 ||
-      selectedTags.size > 0 ||
-      selectedFeaturedId !== null
-    ) {
+    if (selectedTypes.size > 0 || selectedTags.size > 0) {
       setSelectedTypes(new Set());
       setSelectedTags(new Set());
-      setSelectedFeaturedId(null);
     }
-  }
-
-  function clearFeatured() {
-    if (selectedFeaturedId !== null) setSelectedFeaturedId(null);
   }
 
   return (
@@ -122,26 +108,18 @@ function App() {
             selectedTags={selectedTags}
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
-            clearFeatured={clearFeatured}
           />
-          <Featured
-            postData={postData}
-            selectedFeaturedId={selectedFeaturedId}
-            setSelectedFeaturedId={setSelectedFeaturedId}
-            clearAllFilters={clearAllFilters}
-          />
+          <Featured postData={postData} clearAllFilters={clearAllFilters} />
           <DevBlog
             postData={postData}
             filteredPosts={filteredPosts}
             setFilteredPosts={setFilteredPosts}
             selectedTypes={selectedTypes}
             selectedTags={selectedTags}
-            selectedFeaturedId={selectedFeaturedId}
             clearAllFilters={clearAllFilters}
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
           />
-          <Footer />
         </>
       )}
       <Outlet
@@ -156,6 +134,7 @@ function App() {
           updateSelectedTags,
         ]}
       />
+      <Footer />
     </div>
   );
 }

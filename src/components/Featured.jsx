@@ -1,39 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Featured({
-  postData,
-  clearAllFilters,
-  selectedFeaturedId,
-  setSelectedFeaturedId,
-}) {
+export default function Featured({ postData, clearAllFilters }) {
   // Create array of featured posts sorted by date
   const featuredPosts = postData
     .filter((post) => post.featured === true)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  function filterPostsByID(id) {
-    setSelectedFeaturedId(id);
-  }
-
   const navigate = useNavigate();
 
   return (
     <>
-      <h2>#featured</h2>
+      <h2 id="projects">#featured projects</h2>
       <div className="featured-posts-container">
         {featuredPosts.map((post) => {
           return (
             <button
-              className={
-                post.id === selectedFeaturedId
-                  ? "btn-featured-selected"
-                  : "btn-featured"
-              }
+              className="btn-featured"
               key={post.id}
               onClick={() => {
                 clearAllFilters();
-                filterPostsByID(post.id);
-                navigate("/");
+                navigate(`/posts/${post.slug}`);
               }}
             >
               <div className="featured-post">

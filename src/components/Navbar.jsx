@@ -32,6 +32,12 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
           ,&nbsp;
         </span>
         <span>
+          <a onClick={() => navigate("/")} href="#projects">
+            projects
+          </a>
+          ,&nbsp;
+        </span>
+        <span>
           <a onClick={() => navigate("/")} href="#devblog">
             blog
           </a>

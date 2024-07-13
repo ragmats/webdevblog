@@ -11,7 +11,6 @@ export default function DevBlog({
   setFilteredPosts,
   selectedTypes,
   selectedTags,
-  selectedFeaturedId,
   clearAllFilters,
   updateSelectedTypes,
   updateSelectedTags,
@@ -21,15 +20,7 @@ export default function DevBlog({
     const selectedTypesArray = Array.from(selectedTypes);
     const selectedTagsArray = Array.from(selectedTags);
 
-    if (selectedFeaturedId) {
-      // Filter posts for that featured ID
-      setFilteredPosts(
-        postData.filter((post) => post.id === selectedFeaturedId)
-      );
-    } else if (
-      selectedTypesArray.length > 0 &&
-      selectedTagsArray.length === 0
-    ) {
+    if (selectedTypesArray.length > 0 && selectedTagsArray.length === 0) {
       // Filter posts that have any of the selected types
       setFilteredPosts(
         postData.filter((post) => selectedTypesArray.includes(post.type))
@@ -57,7 +48,7 @@ export default function DevBlog({
     } else {
       setFilteredPosts(postData);
     }
-  }, [selectedTypes, selectedTags, selectedFeaturedId]);
+  }, [selectedTypes, selectedTags]);
 
   return (
     <>
