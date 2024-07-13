@@ -378,6 +378,7 @@ body {
 }
 
 .error-image {
+  max-height: 50svh;
   width: 100%;
 }
 

@@ -16,6 +16,7 @@ import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// TODO BUG: http://localhost:5173/posts/gridsquidx
 // TODO Populate postData with real posts
 // TODO Add final pre-launch style touches (light mode default)
 // TODO Launch!
