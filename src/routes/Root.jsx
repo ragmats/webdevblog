@@ -104,7 +104,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div id="top" className="container">
       <Navbar clearAllFilters={clearAllFilters} isFiltered={isFiltered} />
       <CubeHeader />
       {location.pathname === "/" && (

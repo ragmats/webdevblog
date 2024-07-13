@@ -22,10 +22,9 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
           &#91;&nbsp;
           <button
             className="btn"
-            onClick={() => {
-              navigate("/");
-              document.getElementById("profile").scrollIntoView();
-            }}
+            onClick={() =>
+              navigate("/", { state: { scrollTarget: "profile" } })
+            }
           >
             profile
           </button>
@@ -34,10 +33,9 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
         <span>
           <button
             className="btn"
-            onClick={() => {
-              navigate("/");
-              document.getElementById("filters").scrollIntoView();
-            }}
+            onClick={() =>
+              navigate("/", { state: { scrollTarget: "filters" } })
+            }
           >
             filters
           </button>
@@ -46,10 +44,9 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
         <span>
           <button
             className="btn"
-            onClick={() => {
-              navigate("/");
-              document.getElementById("projects").scrollIntoView();
-            }}
+            onClick={() =>
+              navigate("/", { state: { scrollTarget: "projects" } })
+            }
           >
             projects
           </button>
@@ -59,10 +56,9 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
         <span>
           <button
             className="btn"
-            onClick={() => {
-              navigate("/");
-              document.getElementById("devblog").scrollIntoView();
-            }}
+            onClick={() =>
+              navigate("/", { state: { scrollTarget: "devblog" } })
+            }
           >
             blog
           </button>
@@ -73,8 +69,7 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
             className="btn"
             onClick={() => {
               clearAllFilters();
-              navigate("/");
-              window.scrollTo(0, 0);
+              navigate("/", { state: { scrollTarget: "top" } });
             }}
           >
             home
