@@ -20,7 +20,7 @@ export default function Post() {
 
   const post = slugMap[slug];
 
-  if (!post.id) return <Navigate to="/notfound" />;
+  if (!post) return <Navigate to="/notfound" />;
   return (
     <div className="dev-blog-container">
       <div className="post">
