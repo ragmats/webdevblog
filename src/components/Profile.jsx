@@ -2,7 +2,7 @@ export default function Profile() {
   return (
     <>
       <div className="jump-link" id="profile">
-        <h2>#hi</h2>
+        <h2 id="profile">#hi</h2>
       </div>
       <div className="profile">
         <div className="profile-photo-container">

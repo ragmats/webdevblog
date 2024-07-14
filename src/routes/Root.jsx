@@ -72,6 +72,8 @@ function App() {
     if (location.state && location.state.scrollTarget) {
       const scrollTarget = location.state.scrollTarget;
       document.getElementById(scrollTarget).scrollIntoView();
+      // Clear location state to prevent scroll jumping upon reload
+      navigate("", { state: { scrollTarget: null } });
     }
   }, [location.state]);
 
