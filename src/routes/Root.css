@@ -46,7 +46,8 @@ a:hover {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
@@ -62,6 +63,11 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 .margin-0 {
@@ -365,6 +371,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.dev-blog-body li {
+  margin: 0 0 1em 1.5em;
+}
+
+.dev-blog-body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .dev-blog-sub-header {

@@ -17,10 +17,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 // TODO Populate postData with real posts
-// TODO Add final pre-launch style touches (light mode default)
-// TODO Launch!
+// TODO Launch! (set github pages to custom domain stevencoy.com)
 // TODO Make filters work with params so they are linkable
-// TODO Make it so single post pages jump down to post start (skip links?)
 // TODO Make it so main dev blog posts are abbreviated and have a "more..." link?
 // TODO Add icons to site (LinkedIn, etc.)
 // TODO Add dark mode

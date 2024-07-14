@@ -1,143 +1,89 @@
 [
   {
-    "id": 9,
-    "featured": true,
-    "title": "Testing with 404.html",
-    "date": "07/26/2024",
-    "type": "Project",
-    "tags": [
-      "Test"
-    ],
-    "image": "profile.jpg",
-    "imageIsLogo": false,
-    "body": "test!!!!!!!!!!!",
-    "slug": "testing-with-404html"
-  },
-  {
-    "id": 8,
-    "featured": true,
-    "title": "GridSquid4",
-    "date": "07/26/2024",
-    "type": "Project",
-    "tags": [
-      "Test"
-    ],
-    "image": "profile.jpg",
-    "imageIsLogo": false,
-    "body": "test",
-    "slug": "gridsquid4"
-  },
-  {
-    "id": 7,
-    "featured": true,
-    "title": "GridSquid3",
-    "date": "06/26/2024",
-    "type": "Project",
-    "tags": [
-      "Test"
-    ],
-    "image": "gs_logo_long.svg",
-    "imageIsLogo": true,
-    "body": "test",
-    "slug": "gridsquid3"
-  },
-  {
     "id": 6,
-    "featured": true,
-    "title": "GridSquid2",
-    "date": "06/26/2024",
-    "type": "Project",
+    "featured": false,
+    "title": "Welcome to My New React Web Dev Portfolio Blog Website Thing!",
+    "date": "07/14/2024",
+    "type": "Website",
     "tags": [
-      "Test"
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
-    "image": "gs_logo_long.svg",
-    "imageIsLogo": true,
-    "body": "test",
-    "slug": "gridsquid2"
-  },
-  {
-    "id": 5,
-    "featured": true,
-    "title": "GridSquid1",
-    "date": "06/26/2024",
-    "type": "Project",
-    "tags": [
-      "Test"
-    ],
-    "image": "gs_logo_long.svg",
-    "imageIsLogo": true,
-    "body": "test",
-    "slug": "gridsquid1"
+    "imageIsLogo": false,
+    "body": "<p>Previously, my portfolio site was built using Jekyll, a site generator based on Ruby (a language I’m not very familiar with). Given that most of my projects these days are in React, I decided it would be a smarter idea to rebuild my site from scratch using React. This not only showcases my skills but also serves as an ongoing sandbox for me to experiment and build upon.</p><p>In addition to featuring my main projects, I plan to keep my development skills sharp with smaller, experimental projects and discussions. Some of these may become features on this site if they make sense to add, while others will be purely for fun and learning.</p><h4>Planned Upcoming Features:</h4><ul><li><b>Sharable Filtered Pages:</b> Enable filters to work with search parameters, allowing filtered pages to be shared.</li><li><b>Light/Dark Mode:</b> Implement a toggle for light and dark modes.</li><li><b>Enhanced Styling:</b> Add icons to improve the site’s design.</li><li><b>Collapsible Action Button:</b> Introduce a collapsible action button with filtering options.</li><li><b>Loading and Pagination:</b> Implement loading and paginated posts if needed.</li></ul><p>Stay tuned for more updates as I continue to develop and improve this site.</p>",
+    "slug": "welcome-to-my-new-react-web-dev-portfolio-blog-website-thing"
   },
   {
     "id": 4,
-    "featured": false,
-    "title": "Some Experiment",
-    "date": "01/5/2024",
-    "type": "Experiment",
+    "featured": true,
+    "title": "HISSINGBELL Developer Website",
+    "date": "10/06/2023",
+    "type": "Project",
     "tags": [
-      "Tag1",
-      "99",
-      "Tag6"
+      "Next.js",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
-    "image": null,
-    "imageIsLogo": false,
-    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper justo a elit dapibus, ac sagittis ante mollis. Cras congue vulputate pellentesque. Duis ultrices lacus bibendum urna consequat, vel venenatis dui semper. Nullam interdum tempor maximus. Nulla facilisi. Nam eleifend viverra fermentum. Integer ac turpis auctor, laoreet turpis rutrum, accumsan tortor. Etiam ac porta ligula. Sed sed nisi luctus, pellentesque tortor tincidunt, suscipit lacus. Suspendisse tristique, metus eu facilisis egestas, est tellus tincidunt nisi, ultrices dictum tellus nulla sollicitudin urna. Aenean suscipit et erat et eleifend. Fusce luctus vestibulum diam, quis congue leo luctus maximus. Nullam convallis velit felis, faucibus lacinia massa dictum in. Nam non dignissim nisl.</p>",
-    "slug": "some-experiment"
+    "image": "hissingbell.png",
+    "imageIsLogo": true,
+    "body": "<h4><a href=\"https://hissingbell.studio/\" target=\"_new\">Live project</a></h4><p>I created the developer website, using Next.js, for the client HISSINGBELL, a San Diego, California based VR game studio.</p><h4>Features Include:</h4><ul><li>Ongoing client/developer collaboration involving virtual meetings, design mock-ups, and Git workflow.</li><li>Static site developed using <a href=\"https://nextjs.org/\" target=\"_new\">Next.js</a>.</li><li>Layered SVG parallax effects using <a href=\"https://react-scroll-parallax.damnthat.tv/docs/intro\" target=\"_new\">React Scroll Parallax</a>.</li><li>Image carousel using <a href=\"https://react-multi-carousel.vercel.app/\" target=\"_new\">React-multi-carousel</a></li><li>Site-wide light/dark mode saved to Local Storage.</li></ul><p>HISSINGBELL was Deployed on <a href=\"https://docs.digitalocean.com/developer-center/deploying-a-next.js-application-on-a-digitalocean-droplet/\" target=\"_new\">DigitalOcean</a>.</p>",
+    "slug": "hissingbell-developer-website"
   },
   {
     "id": 3,
-    "featured": false,
-    "imageIsLogo": false,
-    "title": "Some Discussion with a Much Longer Title, Perhaps Very Long, Than Before for Testing?",
-    "date": "06/27/2024",
-    "type": "Discussion",
+    "featured": true,
+    "title": "SIRME, a React Simon Game",
+    "date": "03/27/2023",
+    "type": "Project",
     "tags": [
-      "Tag1",
-      "Tag5",
-      "Tag6"
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
-    "image": null,
-    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper justo a elit dapibus, ac sagittis ante mollis. Cras congue vulputate pellentesque. Duis ultrices lacus bibendum urna consequat, vel venenatis dui semper. Nullam interdum tempor maximus. Nulla facilisi. Nam eleifend viverra fermentum. Integer ac turpis auctor, laoreet turpis rutrum, accumsan tortor. Etiam ac porta ligula. Sed sed nisi luctus, pellentesque tortor tincidunt, suscipit lacus. Suspendisse tristique, metus eu facilisis egestas, est tellus tincidunt nisi, ultrices dictum tellus nulla sollicitudin urna. Aenean suscipit et erat et eleifend. Fusce luctus vestibulum diam, quis congue leo luctus maximus. Nullam convallis velit felis, faucibus lacinia massa dictum in. Nam non dignissim nisl.</p><p>Praesent lectus ex, rutrum ac lacus at, scelerisque vulputate nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lectus at tortor tempus, quis tristique lorem faucibus. Etiam fringilla malesuada mi, quis condimentum ante suscipit in. Phasellus maximus, sapien a volutpat facilisis, lectus nulla ullamcorper dui, ut eleifend sem sapien eu turpis. In euismod non quam quis fermentum. Aliquam sit amet erat non sapien gravida scelerisque. Cras scelerisque nisi in nunc condimentum, sed iaculis ex vehicula. Phasellus congue euismod turpis, in euismod diam. Sed mauris velit, semper vel tempor vel, ultricies vitae ex. Donec sit amet est pretium, efficitur est vitae, ultricies mauris. Proin id odio fermentum, sagittis sem quis, ultrices ipsum. Quisque condimentum orci ut libero posuere sodales. Nullam bibendum vel nunc et cursus.</p>",
-    "slug": "some-discussion-with-a-much-longer-title-perhaps-very-long-than-before-for-testing"
+    "image": "sirme-logo.svg",
+    "imageIsLogo": true,
+    "body": "<h4><a href=\"https://sirme.ragmats.com/\" target=\"_new\">Live project</a> | <a href=\"https://github.com/ragmats/sirme\" target=\"_new\">GitHub Repo</a></h4><p>SIRME is a Simon game created in React. High scores are stored in local storage, so players can enjoy persistent competition with friends on the same device.</p><p>In this project, I learned how to manage state, execute actions in a timed sequence, and properly set and get data in local storage.<h4>Features Include:</h4><ul><li>Persistent local player names and scoreboard.</li><li>Keyboard shortcuts (arrow keys and WASD).</li><li>Simultaneous sound effects using the Web Audio API.</li><li>Difficulty modes (slow, medium, fast).</li><li>A repeat button to replay the most recent sequence at the cost of a score point.</li><li>Intuitive stat tracking, including current round, score, and overall rank.</li><li>An info modal with multiple ways to escape (including escape key) for a better user experience.</li><li>Responsive UI for desktop and mobile.</li><li>Light/dark modes.</li></ul>",
+    "slug": "sirme-a-react-simon-game"
   },
   {
     "id": 2,
     "featured": true,
-    "title": "GridSquid",
-    "date": "06/26/2024",
+    "title": "GridSquid, an Educational Custom Grid Creator",
+    "date": "11/9/2022",
     "type": "Project",
     "tags": [
-      "Tag2",
-      "Tag4",
-      "Tag5",
-      "Tag6",
-      "Tag7",
-      "Tag8",
-      "Another Tag",
-      "Tiny",
-      "Tag9000"
+      "Python",
+      "Django",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
     "image": "gs_logo_long.svg",
     "imageIsLogo": true,
-    "body": "<p>Sed convallis tempor urna at commodo. Pellentesque ut lectus scelerisque, malesuada felis molestie, faucibus dui. Ut ultrices ornare gravida. Quisque et justo quis nulla iaculis bibendum ut quis elit. Aliquam dignissim ligula ut scelerisque elementum. Integer malesuada tristique augue, nec interdum est varius vitae. Pellentesque rutrum tempus metus, nec eleifend magna auctor eget. Quisque tempor sed nisi at facilisis. Curabitur ac neque lobortis, tempor augue ac, viverra urna. Donec eget augue felis. Aliquam in ultrices dolor. Nunc quis suscipit quam, eget interdum leo. Donec sit amet mi libero.</p><p>Nam commodo efficitur eros, id volutpat orci. Nam iaculis eleifend porta. Nulla a lacus semper, mollis magna sit amet, dictum arcu. Fusce dapibus bibendum mi a ultricies. Morbi eget eros metus. Vestibulum condimentum, massa id aliquam gravida, velit massa egestas urna, a porta dui nisl at orci. Sed tincidunt purus quis quam volutpat, ut sagittis mauris scelerisque. In cursus nibh ac urna interdum, ac condimentum quam auctor. Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. Maecenas arcu mi, consectetur sed ex quis, ullamcorper venenatis est. Vivamus consectetur leo in ex tincidunt efficitur. Pellentesque feugiat magna ac iaculis eleifend. Nulla at ligula laoreet, eleifend elit sit amet, scelerisque ipsum. Nam nec nulla nisi. Morbi quis aliquet felis. Proin lacinia ac nisi eget hendrerit.<p>",
-    "slug": "gridsquid"
+    "body": "<h4><a href=\"https://gridsquid.ragmats.com/\" target=\"_new\">Live project</a> | <a href=\"https://github.com/ragmats/gridsquid\" target=\"_new\">GitHub Repo</a></h4><p>GridSquid is an educational single-page web app coded in JavaScript and Python/Django that lets users make custom grids of images, sounds, and captions. Originally, the idea was to help toddler-aged kids learn the faces and names of all their relatives, but it developed into a much broader application that is useful in homeschool, language studies, and other general education.</p><p>I learned so much from this project, namely how to set up a CRUD-capable backend with user authentication, custom APIs, and integration of open-source libraries, as well as a good understanding of core JavaScript concepts like promises, async/await, destructuring, the spread operator, array methods, and the Fetch API (to name a few). I also became more familiar with Git and the deployment process.</p><h4>Features Include:</h4><ul><li>A front-end written in JavaScript, HTML, and responsive CSS (<a href=\"https://getbootstrap.com/docs/5.0/getting-started/introduction/\" target=\"_new\">Bootstrap 5</a> in part, the rest hand-coded).</li><li>Implementation as a single-page application (SPA) with history states for better user navigation.</li><li>A fully CRUD-capable backend written in <a href=\"https://www.djangoproject.com/\" target=\"_new\">Django</a>/Python with many custom APIs.</li><li>User authentication and password resets via email.</li><li>Guest accounts (w/ same user access) that get deleted every 30 days, checked daily via automated task and custom command.</li><li>User accounts for creating and storing sets of custom grids with uploaded images, audio, and/or text captions.</li><li>Cropping functionality for user-submitted images using the <a href=\"https://fengyuanchen.github.io/cropperjs/\" target=\"_new\">Cropper.js</a> library.</li><li>Backend image compression using <a href=\"https://python-pillow.org/\" target=\"_new\">Pillow</a>.</li><li>User-uploaded audio files converted to mp3 using <a href=\"http://pydub.com/\" target=\"_new\">Pydub</a>.</li><li>File/mime type validation of image and audio files via <a href=\"https://github.com/ahupp/python-magic\"target=\"_new\">Python Magic</a>.</li><li>The option to record and save audio using <a href=\"https://github.com/closeio/mic-recorder-to-mp3\" target=\"_new\">Microphone Recorder to Mp3</a>.</li><li>A memory game that can be played on any grid complete with sound effects and CSS &#8220;card flip&#8221; animations.</li><li>Auto-generated quizzes for any grid with that has audio or text (or both).</li><li>A collection page called &#8220;MyGrids&#8221; where user grids can be organized into albums.</li></ul><p>GridSquid was deployed on <a href=\"https://pythonanywhere.com/\" target=\"_new\">PythonAnywhere</a>.</p><iframe src=\"https://www.youtube.com/embed/qhYY0cqv-ig\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
+    "slug": "gridsquid-an-educational-custom-grid-creator"
   },
   {
     "id": 1,
     "featured": true,
-    "title": "Oopsie",
-    "date": "06/25/2024",
+    "title": "Oopsie, an Anti-Fertility Calculator",
+    "date": "11/15/2021",
     "type": "Project",
     "tags": [
-      "Tag1",
-      "Tag2",
-      "Tag3",
-      "Random"
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
     "image": "oopsie_logo.svg",
     "imageIsLogo": true,
-    "body": "<p>Praesent lectus ex, rutrum ac lacus at, scelerisque vulputate nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lectus at tortor tempus, quis tristique lorem faucibus. Etiam fringilla malesuada mi, quis condimentum ante suscipit in. Phasellus maximus, sapien a volutpat facilisis, lectus nulla ullamcorper dui, ut eleifend sem sapien eu turpis. In euismod non quam quis fermentum. Aliquam sit amet erat non sapien gravida scelerisque. Cras scelerisque nisi in nunc condimentum, sed iaculis ex vehicula. Phasellus congue euismod turpis, in euismod diam. Sed mauris velit, semper vel tempor vel, ultricies vitae ex. Donec sit amet est pretium, efficitur est vitae, ultricies mauris. Proin id odio fermentum, sagittis sem quis, ultrices ipsum. Quisque condimentum orci ut libero posuere sodales. Nullam bibendum vel nunc et cursus.</p><p>Sed convallis tempor urna at commodo. Pellentesque ut lectus scelerisque, malesuada felis molestie, faucibus dui. Ut ultrices ornare gravida. Quisque et justo quis nulla iaculis bibendum ut quis elit. Aliquam dignissim ligula ut scelerisque elementum. Integer malesuada tristique augue, nec interdum est varius vitae. Pellentesque rutrum tempus metus, nec eleifend magna auctor eget. Quisque tempor sed nisi at facilisis. Curabitur ac neque lobortis, tempor augue ac, viverra urna. Donec eget augue felis. Aliquam in ultrices dolor. Nunc quis suscipit quam, eget interdum leo. Donec sit amet mi libero.</p><p>Nam commodo efficitur eros, id volutpat orci. Nam iaculis eleifend porta. Nulla a lacus semper, mollis magna sit amet, dictum arcu. Fusce dapibus bibendum mi a ultricies. Morbi eget eros metus. Vestibulum condimentum, massa id aliquam gravida, velit massa egestas urna, a porta dui nisl at orci. Sed tincidunt purus quis quam volutpat, ut sagittis mauris scelerisque. In cursus nibh ac urna interdum, ac condimentum quam auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas arcu mi, consectetur sed ex quis, ullamcorper venenatis est. Vivamus consectetur leo in ex tincidunt efficitur. Pellentesque feugiat magna ac iaculis eleifend. Nulla at ligula laoreet, eleifend elit sit amet, scelerisque ipsum. Nam nec nulla nisi. Morbi quis aliquet felis. Proin lacinia ac nisi eget hendrerit.</p><p>Sed laoreet ipsum ut ligula rhoncus, in condimentum est posuere. Proin ac elementum dui, vitae tincidunt sapien. Sed lectus sem, consectetur quis consequat eget, laoreet non diam. Integer sagittis, neque sit amet euismod feugiat, lectus lorem tempor erat, non tristique velit risus eu massa. Nunc porttitor dui orci, a condimentum purus volutpat in. Pellentesque pretium justo at velit suscipit, sit amet elementum libero bibendum. Etiam quis suscipit magna. Maecenas volutpat dui leo, vel posuere lectus auctor at. Ut ornare leo leo, eu imperdiet velit mattis eu. Phasellus maximus venenatis enim, non faucibus odio varius sed. Phasellus non nisi sagittis, ornare libero vitae, lacinia tellus.</p><p>Praesent lectus ex, rutrum ac lacus at, scelerisque vulputate nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lectus at tortor tempus, quis tristique lorem faucibus. Etiam fringilla malesuada mi, quis condimentum ante suscipit in. Phasellus maximus, sapien a volutpat facilisis, lectus nulla ullamcorper dui, ut eleifend sem sapien eu turpis. In euismod non quam quis fermentum. Aliquam sit amet erat non sapien gravida scelerisque. Cras scelerisque nisi in nunc condimentum, sed iaculis ex vehicula. Phasellus congue euismod turpis, in euismod diam. Sed mauris velit, semper vel tempor vel, ultricies vitae ex. Donec sit amet est pretium, efficitur est vitae, ultricies mauris. Proin id odio fermentum, sagittis sem quis, ultrices ipsum. Quisque condimentum orci ut libero posuere sodales. Nullam bibendum vel nunc et cursus.</p><p>Sed convallis tempor urna at commodo. Pellentesque ut lectus scelerisque, malesuada felis molestie, faucibus dui. Ut ultrices ornare gravida. Quisque et justo quis nulla iaculis bibendum ut quis elit. Aliquam dignissim ligula ut scelerisque elementum. Integer malesuada tristique augue, nec interdum est varius vitae. Pellentesque rutrum tempus metus, nec eleifend magna auctor eget. Quisque tempor sed nisi at facilisis. Curabitur ac neque lobortis, tempor augue ac, viverra urna. Donec eget augue felis. Aliquam in ultrices dolor. Nunc quis suscipit quam, eget interdum leo. Donec sit amet mi libero.</p><p>Nam commodo efficitur eros, id volutpat orci. Nam iaculis eleifend porta. Nulla a lacus semper, mollis magna sit amet, dictum arcu. Fusce dapibus bibendum mi a ultricies. Morbi eget eros metus. Vestibulum condimentum, massa id aliquam gravida, velit massa egestas urna, a porta dui nisl at orci. Sed tincidunt purus quis quam volutpat, ut sagittis mauris scelerisque. In cursus nibh ac urna interdum, ac condimentum quam auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas arcu mi, consectetur sed ex quis, ullamcorper venenatis est. Vivamus consectetur leo in ex tincidunt efficitur. Pellentesque feugiat magna ac iaculis eleifend. Nulla at ligula laoreet, eleifend elit sit amet, scelerisque ipsum. Nam nec nulla nisi. Morbi quis aliquet felis. Proin lacinia ac nisi eget hendrerit.</p><p>Sed laoreet ipsum ut ligula rhoncus, in condimentum est posuere. Proin ac elementum dui, vitae tincidunt sapien. Sed lectus sem, consectetur quis consequat eget, laoreet non diam. Integer sagittis, neque sit amet euismod feugiat, lectus lorem tempor erat, non tristique velit risus eu massa. Nunc porttitor dui orci, a condimentum purus volutpat in. Pellentesque pretium justo at velit suscipit, sit amet elementum libero bibendum. Etiam quis suscipit magna. Maecenas volutpat dui leo, vel posuere lectus auctor at. Ut ornare leo leo, eu imperdiet velit mattis eu. Phasellus maximus venenatis enim, non faucibus odio varius sed. Phasellus non nisi sagittis, ornare libero vitae, lacinia tellus.</p>",
-    "slug": "oopsie"
+    "body": "<h4><a href=\"https://oopsie.ragmats.com\" target=\"_new\">Live project</a> | <a href=\"https://github.com/ragmats/oopsie\" target=\"_new\">GitHub Repo</a></h4><p>Oopsie is a web-based anti-fertility application that celebrates the wonderful, life-altering event of not getting pregnant. I made this tool because I love my kids and two are enough for me 😊</p><p>This project was built with Flask/Python and JavaScript. I learned how to set up a backend and render templates with calculations based on user input and data from a database. I also learned how to work with classes for cleaner code, Python's datetime module, time zone localization, and persistent user sessions.</p><h4>Features Include:</h4><ul><li>A main page that gives the user their &#8220;oopsie&#8221; chance as a percentage based on method inputs and researched data.</li><li>Responsive design using CSS media queries.</li><li>Algorithms that determine an oopsie chance based on date, time, and user inputs.</li><li>A &#8220;permanent&#8221; session for a persistent user experience.</li><li>Time zone localization.</li><li>A calendar view that displays the current, last, and next week of oopsie chances.</li><li>A JavaScript simulation/mini-game.</li></ul><p>Oopsie was deployed on <a href=\"https://pythonanywhere.com/\" target=\"_new\">PythonAnywhere</a> (previously Heroku).</p><iframe src=\"https://www.youtube.com/embed/flOwjttW78A\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
+    "slug": "oopsie-an-anti-fertility-calculator"
   }
 ]

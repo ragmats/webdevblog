@@ -11,7 +11,7 @@ export default function Featured({ postData, clearAllFilters }) {
   return (
     <>
       <div className="jump-link" id="projects">
-        <h2>#projects</h2>
+        <h2>#featured projects</h2>
       </div>
       <div className="featured-posts-container">
         {featuredPosts.map((post) => {

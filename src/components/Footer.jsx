@@ -9,7 +9,7 @@ export default function Footer() {
           src={`${import.meta.env.VITE_BASE_URL}img/asleep.jpg`}
         ></img>
       </div>
-      Copyright {date.getFullYear()} Steven Coy
+      Copyright &#169; {date.getFullYear()} Steven Coy
     </div>
   );
 }
