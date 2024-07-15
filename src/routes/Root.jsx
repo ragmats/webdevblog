@@ -16,7 +16,7 @@ import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// TODO Launch! (set github pages to custom domain stevencoy.com)
+// TODO Launch! (set github pages to custom domain stevencoy.com) - GET THIS TO WORK
 // TODO Make filters work with params so they are linkable
 // TODO Make it so main dev blog posts are abbreviated and have a "more..." link?
 // TODO Add icons to site (LinkedIn, etc.)
