@@ -37,7 +37,7 @@ const router = createBrowserRouter(
       element: <NotFound />,
     },
   ],
-  { basename: import.meta.env.VITE_BASE_URL }
+  { basename: "/" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
