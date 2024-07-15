@@ -12,11 +12,9 @@
 
       // Redirect to homepage with possible slug as search parameter
       if (currentUrl) {
-        window.location.href = `/webdevblog?redirect=${encodeURIComponent(
-          possibleSlug
-        )}`;
+        window.location.href = `/?redirect=${encodeURIComponent(possibleSlug)}`;
       } else {
-        window.location.href = "/webdevblog";
+        window.location.href = "/";
       }
     </script>
   </head>

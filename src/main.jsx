@@ -15,7 +15,7 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <App />,
-      basename: import.meta.env.VITE_BASE_URL,
+      // basename: import.meta.env.VITE_BASE_URL,
       children: [
         {
           path: "posts/:slug",
@@ -36,8 +36,8 @@ const router = createBrowserRouter(
       path: "notfound",
       element: <NotFound />,
     },
-  ],
-  { basename: import.meta.env.VITE_BASE_URL }
+  ]
+  // { basename: import.meta.env.VITE_BASE_URL }
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
