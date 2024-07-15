@@ -15,7 +15,7 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <App />,
-      basename: import.meta.env.VITE_BASE_URL,
+      basename: "/",
       children: [
         {
           path: "posts/:slug",

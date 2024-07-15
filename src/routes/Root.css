@@ -484,7 +484,6 @@ body {
 
 .footer-photo-container {
   border: 1px solid black;
-  /* max-height: 50vw; */
   max-height: 200px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
