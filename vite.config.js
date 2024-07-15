@@ -7,5 +7,5 @@ const env = loadEnv(process.env.NODE_ENV, process.cwd());
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: env.VITE_BASE_URL || "/",
 });
