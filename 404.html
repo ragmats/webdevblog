@@ -12,11 +12,9 @@
 
       // Redirect to homepage with possible slug as search parameter
       if (currentUrl) {
-        window.location.href = `/www.stevencoy.com/?redirect=${encodeURIComponent(
-          possibleSlug
-        )}`;
+        window.location.href = `/?redirect=${encodeURIComponent(possibleSlug)}`;
       } else {
-        window.location.href = "/www.stevencoy.com/";
+        window.location.href = "/";
       }
     </script>
   </head>
