@@ -85,12 +85,12 @@ export default function Navbar({
           </button>
           <span>&nbsp;&#93;</span>
         </div>
-        <span>
+        <div className="theme-circle-container">
           <button
             className="theme-circle"
             onClick={() => toggleTheme()}
           ></button>
-        </span>
+        </div>
       </span>
     </div>
   );

@@ -154,19 +154,24 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
   background-color: var(--bg-color-body);
 }
 
 @media (width <= 450px) {
   .nav-container {
     flex-direction: column-reverse;
-    align-items: center;
   }
+}
+
+.theme-circle-container {
+  /* border: 1px solid red; */
+  display: flex;
 }
 
 .theme-circle {
   border: 1px solid var(--text-color);
-  height: 100%;
+  height: 1em;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background: linear-gradient(
@@ -174,7 +179,7 @@ body {
     var(--text-color) 50%,
     var(--bg-color-card) 50%
   );
-  margin-left: 2px;
+  margin-left: 4px;
   cursor: pointer;
 }
 
