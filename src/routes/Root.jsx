@@ -16,7 +16,7 @@ import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// TODO Launch! (set github pages to custom domain stevencoy.com) - GET THIS TO WORK
+// TODO Can tags on posts fit better? They wrap and orphan easily on mobile.
 // TODO Make filters work with params so they are linkable
 // TODO Make it so main dev blog posts are abbreviated and have a "more..." link?
 // TODO Add icons to site (LinkedIn, etc.)
@@ -30,16 +30,60 @@ function App() {
   const [selectedTypes, setSelectedTypes] = useState(new Set());
   const [selectedTags, setSelectedTags] = useState(new Set());
   const [isFiltered, setIsFiltered] = useState(false);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
   const [searchParams] = useSearchParams();
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  const lightThemeVariables = [
+    { name: "--cube-back-shadow", color: "rgb(225, 225, 225)" },
+    { name: "--interact-color", color: "lightseagreen" },
+    { name: "--interact-color-hover", color: "darkcyan" },
+    { name: "--bg-color-body", color: "whitesmoke" },
+    { name: "--bg-color-card", color: "white" },
+    { name: "--bg-color-filter-selected", color: "gainsboro" },
+    { name: "--text-color", color: "black" },
+    { name: "--featured-border-color", color: "black" },
+    { name: "--featured-border-color-hover", color: "darkgray" },
+    { name: "--border-color-card", color: "lightgray" },
+  ];
+
+  const darkThemeVariables = [
+    { name: "--cube-back-shadow", color: "rgb(40, 40, 40)" },
+    { name: "--interact-color", color: "steelblue" },
+    { name: "--interact-color-hover", color: "rgb(88, 161, 221)" },
+    { name: "--bg-color-body", color: "rgb(30, 30, 30)" },
+    { name: "--bg-color-card", color: "rgb(32, 33, 39)" },
+    { name: "--bg-color-filter-selected", color: "rgb(53, 53, 53)" },
+    { name: "--text-color", color: "rgb(133, 145, 170)" },
+    { name: "--featured-border-color", color: "rgb(53, 53, 53)" },
+    { name: "--featured-border-color-hover", color: "dimgray" },
+    { name: "--border-color-card", color: "rgb(43, 43, 43)" },
+  ];
 
   // Create slug map for more efficient lookup of slugs on individual posts
   const slugMap = createSlugMap(postData);
 
   // Get possible slug from search params
   const possibleSlug = searchParams.get("redirect");
+
+  useEffect(() => {
+    // Save current theme in local storage
+    localStorage.setItem("theme", theme);
+    // Set colors according to theme
+    if (theme === "light") {
+      lightThemeVariables.forEach((color) =>
+        document.documentElement.style.setProperty(color.name, color.color)
+      );
+    } else if (theme === "dark") {
+      darkThemeVariables.forEach((color) =>
+        document.documentElement.style.setProperty(color.name, color.color)
+      );
+    }
+  }, [theme]);
 
   // Navigate appropriately if there are search params from the 404 redirect
   useEffect(() => {
@@ -103,7 +147,12 @@ function App() {
 
   return (
     <div id="top" className="container">
-      <Navbar clearAllFilters={clearAllFilters} isFiltered={isFiltered} />
+      <Navbar
+        theme={theme}
+        setTheme={setTheme}
+        clearAllFilters={clearAllFilters}
+        isFiltered={isFiltered}
+      />
       <CubeHeader />
       {location.pathname === "/" && (
         <>

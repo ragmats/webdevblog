@@ -1,8 +1,33 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"); */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Light mode color variables */
+:root {
+  --cube-back-shadow: rgb(225, 225, 225);
+  --interact-color: lightseagreen;
+  --interact-color-hover: darkcyan;
+  --bg-color-body: whitesmoke;
+  --bg-color-card: white;
+  --bg-color-filter-selected: gainsboro;
+  --text-color: black;
+  --featured-border-color: black;
+  --featured-border-color-hover: darkgray;
+  --border-color-card: lightgray;
+}
+
+/* Dark mode color variables */
+/* :root {
+  --cube-back-shadow: rgb(40, 40, 40);
+  --interact-color: steelblue;
+  --interact-color-hover: rgb(88, 161, 221);
+  --bg-color-body: rgb(30, 30, 30);
+  --bg-color-card: rgb(32, 33, 39);
+  --bg-color-filter-selected: rgb(53, 53, 53);
+  --text-color: rgb(133, 145, 170);
+  --featured-border-color: rgb(53, 53, 53);
+  --featured-border-color-hover: dimgray;
+  --border-color-card: rgb(43, 43, 43);
+} */
 
 /* Limit how small cube will get */
 @media (height <= 800px) {
@@ -24,12 +49,12 @@
 }
 
 a {
-  color: lightseagreen;
+  color: var(--interact-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: darkcyan;
+  color: var(--interact-color-hover);
 }
 
 .cube-link {
@@ -80,14 +105,13 @@ body {
   width: 100%;
   justify-content: center;
   /* perspective: 2000px; */
-  /* font-family: "Lato", sans-serif; */
-  /* font-family: "Poppins", sans-serif; */
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
-  background-color: whitesmoke;
+  background-color: var(--bg-color-body);
+  color: var(--text-color);
 }
 
 .container {
@@ -129,7 +153,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  background-color: whitesmoke;
+  background-color: var(--bg-color-body);
 }
 
 @media (width <= 450px) {
@@ -162,7 +186,7 @@ body {
 
 .face {
   position: absolute;
-  border: 2px solid black;
+  border: 2px solid var(--text-color);
   height: calc(0.5 * var(--title-container-height));
   width: calc(0.5 * var(--title-container-height));
   display: flex;
@@ -195,7 +219,7 @@ body {
 .face-back {
   /* background: green; */
   border: 0px;
-  box-shadow: 0px 0px 20px 1px rgb(225, 225, 225) inset;
+  box-shadow: 0px 0px 20px 1px var(--cube-back-shadow) inset;
   transform: rotateY(180deg)
     translateZ(calc(0.25 * var(--title-container-height)));
 }
@@ -203,7 +227,7 @@ body {
 .face-right {
   /* background: yellow; */
   border: 0px;
-  box-shadow: 0px 0px 20px 1px rgb(225, 225, 225) inset;
+  box-shadow: 0px 0px 20px 1px var(--cube-back-shadow) inset;
   transform: rotateY(90deg)
     translateZ(calc(0.25 * var(--title-container-height)));
 }
@@ -211,7 +235,7 @@ body {
 .face-bottom {
   /* background: magenta; */
   border: 0px;
-  box-shadow: 0px 0px 20px 1px rgb(225, 225, 225) inset;
+  box-shadow: 0px 0px 20px 1px var(--cube-back-shadow) inset;
   transform: rotateX(-90deg)
     translateZ(calc(0.25 * var(--title-container-height)));
 }
@@ -236,18 +260,18 @@ body {
 
 .profile {
   /* border: 1px solid purple; */
-  box-shadow: 1px 1px 4px 1px lightgray;
+  box-shadow: 1px 1px 4px 1px var(--border-color-card);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 2em;
   padding: 2em;
-  background-color: white;
+  background-color: var(--bg-color-card);
 }
 
 .profile-photo-container {
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   height: 200px;
   min-width: 200px;
   border-radius: 50%;
@@ -305,7 +329,7 @@ body {
 }
 
 .featured-post {
-  border: 1px solid black;
+  border: 1px solid var(--featured-border-color);
   display: flex;
   width: 143px;
   height: 50px;
@@ -330,14 +354,14 @@ body {
 
 .btn-featured {
   border: 0;
-  /* background-color: red; */
+  background-color: var(--bg-color-body);
   cursor: pointer;
 }
 
 .btn-featured:hover {
   border: 0;
-  background-color: white;
-  box-shadow: 0px 0px 2px 1px darkgray;
+  background-color: var(--bg-color-card);
+  box-shadow: 0px 0px 2px 1px var(--featured-border-color-hover);
 }
 
 .featured-post-image {
@@ -353,12 +377,12 @@ body {
 
 .post {
   /* border: 1px solid lightgray; */
-  box-shadow: 1px 1px 4px 1px lightgray;
+  box-shadow: 1px 1px 4px 1px var(--border-color-card);
   display: flex;
   flex-direction: column;
   gap: 2em;
   padding: 2em;
-  background-color: white;
+  background-color: var(--bg-color-card);
 }
 
 .post-image {
@@ -423,17 +447,17 @@ body {
   border: 0;
   padding: 0;
   background-color: transparent;
-  color: lightseagreen;
+  color: var(--interact-color);
   cursor: pointer;
   font-size: 1em;
 }
 
 .btn:hover {
-  color: darkcyan;
+  color: var(--interact-color-hover);
 }
 
 .btn-reset-filters {
-  background-color: whitesmoke;
+  background-color: var(--bg-color-body);
   padding: 0 0.25em;
 }
 
@@ -441,35 +465,35 @@ body {
   border: 0;
   padding: 0;
   background-color: transparent;
-  color: lightseagreen;
+  color: var(--interact-color);
   cursor: pointer;
   font-size: 1em;
   font-style: italic;
 }
 
 .btn-type:hover {
-  color: darkcyan;
+  color: var(--interact-color-hover);
 }
 
 .btn-type-selected {
-  background-color: gainsboro;
+  background-color: var(--bg-color-filter-selected);
 }
 
 .btn-tag {
   border: 0;
   padding: 0;
   background-color: transparent;
-  color: lightseagreen;
+  color: var(--interact-color);
   cursor: pointer;
   font-size: 1em;
 }
 
 .btn-tag:hover {
-  color: darkcyan;
+  color: var(--interact-color-hover);
 }
 
 .btn-tag-selected {
-  background-color: gainsboro;
+  background-color: var(--bg-color-filter-selected);
 }
 
 .footer-container {
@@ -483,7 +507,7 @@ body {
 }
 
 .footer-photo-container {
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   /* max-height: 50vw; */
   max-height: 200px;
   aspect-ratio: 1 / 1;

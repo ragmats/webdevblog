@@ -1,9 +1,19 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import ResetFiltersButton from "./ResetFiltersButton";
 
-export default function Navbar({ clearAllFilters, isFiltered }) {
+export default function Navbar({
+  theme,
+  setTheme,
+  clearAllFilters,
+  isFiltered,
+}) {
   const location = useLocation();
   const navigate = useNavigate();
+
+  function toggleTheme() {
+    if (theme === "light") setTheme("dark");
+    else if (theme === "dark") setTheme("light");
+  }
 
   return (
     <div
@@ -61,6 +71,12 @@ export default function Navbar({ clearAllFilters, isFiltered }) {
             }
           >
             blog
+          </button>
+          ,&nbsp;
+        </span>
+        <span>
+          <button className="btn" onClick={() => toggleTheme()}>
+            {theme === "light" ? "D" : "L"}
           </button>
           ,&nbsp;
         </span>
