@@ -1,20 +1,5 @@
 [
   {
-    "id": 7,
-    "featured": false,
-    "title": "Test",
-    "date": "07/16/2024",
-    "type": "Discussion",
-    "tags": [
-      "React Router",
-      "GitHub",
-      "Deployment"
-    ],
-    "imageIsLogo": false,
-    "body": "<p>Test...</p>",
-    "slug": "test"
-  },
-  {
     "id": 6,
     "featured": false,
     "title": "Avoid This Nuisance When Deploying a React Router Project to GitHub Pages",
