@@ -16,12 +16,11 @@ import { createSlugMap } from "../utils/createSlugMap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// TODO Make a better light/dark mode button in Navbar
 // TODO Can tags on posts fit better? They wrap and orphan easily on mobile.
 // TODO Make filters work with params so they are linkable
 // TODO Make it so main dev blog posts are abbreviated and have a "more..." link?
 // TODO Add icons to site (LinkedIn, etc.)
-// TODO Add dark mode
-// ? Do posts need a darkmode version of the images?
 // TODO Add action button with epanding tags, etc?
 // TODO Add loading/paginated posts?
 
@@ -192,6 +191,7 @@ function App() {
           clearAllFilters,
           updateSelectedTypes,
           updateSelectedTags,
+          theme,
         ]}
       />
       <Footer />

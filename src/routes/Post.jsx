@@ -16,6 +16,7 @@ export default function Post() {
     clearAllFilters,
     updateSelectedTypes,
     updateSelectedTags,
+    theme,
   ] = useOutletContext();
 
   const post = slugMap[slug];
@@ -31,7 +32,7 @@ export default function Post() {
           clearAllFilters={clearAllFilters}
           updateSelectedTypes={updateSelectedTypes}
         />
-        <Image post={post} />
+        <Image post={post} theme={theme} />
         <Body post={post} />
         <Tags
           post={post}

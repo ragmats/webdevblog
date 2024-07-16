@@ -5,7 +5,12 @@
     "title": "Welcome to My New React Web Dev Portfolio Blog Website Thing!",
     "date": "07/14/2024",
     "type": "Website",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageIsLogo": false,
     "body": "<p>Given that most of my projects these days are in React, it made sense to rebuild my previous portfolio site (which used Jeckyll) from scratch in React to serve as an ongoing sandbox for me to experiment and build upon.</p><p>In addition to featuring my main projects, I plan to keep my development skills sharp with smaller, experimental projects and discussions. Some of these may become features on this site if they make sense to add, while others will be purely for fun and learning.</p><h4>Planned Upcoming Features:</h4><ul><li><b>Sharable Filtered Pages:</b> Enable filters to work with search parameters, allowing filtered pages to be shared.</li><li><b>Light/Dark Mode:</b> Implement a toggle for light and dark modes.</li><li><b>Enhanced Styling:</b> Add icons to improve the site’s design.</li><li><b>Collapsible Action Button:</b> Introduce a collapsible action button with filtering options.</li><li><b>Loading and Pagination:</b> Implement loading and paginated posts if needed.</li></ul><p>Stay tuned for more updates as I continue to develop and improve this site.</p>",
     "slug": "welcome-to-my-new-react-web-dev-portfolio-blog-website-thing"
@@ -16,7 +21,13 @@
     "title": "HISSINGBELL Developer Website",
     "date": "10/06/2023",
     "type": "Project",
-    "tags": ["Next.js", "React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "hissingbell_light.png",
     "imageDark": "hissingbell_dark.png",
     "imageIsLogo": true,
@@ -29,7 +40,12 @@
     "title": "SIRME, a React Simon Game",
     "date": "03/27/2023",
     "type": "Project",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "sirme-logo.svg",
     "imageDark": "sirme-logo.svg",
     "imageIsLogo": true,
@@ -42,7 +58,13 @@
     "title": "GridSquid, an Educational Custom Grid Creator",
     "date": "11/9/2022",
     "type": "Project",
-    "tags": ["Python", "Django", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "gs_logo_long.svg",
     "imageDark": "gs_logo_long.svg",
     "imageIsLogo": true,
@@ -55,7 +77,13 @@
     "title": "Oopsie, an Anti-Fertility Calculator",
     "date": "11/15/2021",
     "type": "Project",
-    "tags": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "oopsie_logo.svg",
     "imageDark": "oopsie_logo.svg",
     "imageIsLogo": true,
