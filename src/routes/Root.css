@@ -99,6 +99,14 @@ h4 {
   margin: 0;
 }
 
+.quote {
+  margin-left: 1em;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 body {
   /* border: 1px solid purple; */
   display: flex;
@@ -410,11 +418,34 @@ body {
   width: 100%;
 }
 
+.dev-blog-body-container {
+  position: relative;
+}
+
 .dev-blog-body {
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.dev-blog-body-collapsed {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.read-more {
+  /* border: 1px solid red; */
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent 0%, white 60%);
+  padding-bottom: 0.5em;
 }
 
 .dev-blog-body li {

@@ -71,7 +71,7 @@ export default function DevBlog({
                   updateSelectedTypes={updateSelectedTypes}
                 />
                 <Image post={post} theme={theme} />
-                <Body post={post} />
+                <Body post={post} clearAllFilters={clearAllFilters} />
                 <Tags
                   post={post}
                   selectedTags={selectedTags}

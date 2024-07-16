@@ -22,7 +22,7 @@ export default function Profile() {
           <p>
             I like being able to have an idea, obsess over it, and bring it to
             life with code. I learn the most when I begin with no clue how to
-            make it happen. But once it does, it's kind of amazing.
+            make it happen. But once it does, it's an amazing feeling.
           </p>
           <p>
             This site,{" "}
