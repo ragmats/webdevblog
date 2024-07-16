@@ -55,13 +55,13 @@ function App() {
     { name: "--cube-back-shadow", color: "rgb(40, 40, 40)" },
     { name: "--interact-color", color: "steelblue" },
     { name: "--interact-color-hover", color: "rgb(88, 161, 221)" },
-    { name: "--bg-color-body", color: "rgb(30, 30, 30)" },
+    { name: "--bg-color-body", color: "rgb(25, 25, 25)" },
     { name: "--bg-color-card", color: "rgb(32, 33, 39)" },
     { name: "--bg-color-filter-selected", color: "rgb(53, 53, 53)" },
     { name: "--text-color", color: "rgb(133, 145, 170)" },
     { name: "--featured-border-color", color: "rgb(53, 53, 53)" },
     { name: "--featured-border-color-hover", color: "dimgray" },
-    { name: "--border-color-card", color: "rgb(43, 43, 43)" },
+    { name: "--border-color-card", color: "rgb(50, 50, 50)" },
   ];
 
   // Create slug map for more efficient lookup of slugs on individual posts
