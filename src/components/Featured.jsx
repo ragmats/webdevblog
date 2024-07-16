@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Featured({ postData, clearAllFilters }) {
+export default function Featured({ postData, clearAllFilters, theme }) {
   // Create array of featured posts sorted by date
   const featuredPosts = postData
     .filter((post) => post.featured === true)
@@ -31,7 +31,11 @@ export default function Featured({ postData, clearAllFilters }) {
                       ? "featured-post-image logo"
                       : "featured-post-image"
                   }
-                  src={`${import.meta.env.VITE_BASE_URL}img/${post.image}`}
+                  src={
+                    theme === "light"
+                      ? `${import.meta.env.VITE_BASE_URL}img/${post.imageLight}`
+                      : `${import.meta.env.VITE_BASE_URL}img/${post.imageDark}`
+                  }
                 />
               </div>
             </button>

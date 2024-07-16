@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 /* Light mode color variables */
-:root {
+/* :root {
   --cube-back-shadow: rgb(225, 225, 225);
   --interact-color: lightseagreen;
   --interact-color-hover: darkcyan;
@@ -13,7 +13,7 @@
   --featured-border-color: black;
   --featured-border-color-hover: darkgray;
   --border-color-card: lightgray;
-}
+} */
 
 /* Dark mode color variables */
 /* :root {

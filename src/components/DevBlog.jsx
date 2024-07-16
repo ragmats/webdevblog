@@ -14,6 +14,7 @@ export default function DevBlog({
   clearAllFilters,
   updateSelectedTypes,
   updateSelectedTags,
+  theme,
 }) {
   useEffect(() => {
     // Convert sets to arrays to enable some method
@@ -69,7 +70,7 @@ export default function DevBlog({
                   clearAllFilters={clearAllFilters}
                   updateSelectedTypes={updateSelectedTypes}
                 />
-                <Image post={post} />
+                <Image post={post} theme={theme} />
                 <Body post={post} />
                 <Tags
                   post={post}

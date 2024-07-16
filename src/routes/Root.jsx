@@ -164,7 +164,11 @@ function App() {
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
           />
-          <Featured postData={postData} clearAllFilters={clearAllFilters} />
+          <Featured
+            postData={postData}
+            clearAllFilters={clearAllFilters}
+            theme={theme}
+          />
           <DevBlog
             postData={postData}
             filteredPosts={filteredPosts}
@@ -174,6 +178,7 @@ function App() {
             clearAllFilters={clearAllFilters}
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
+            theme={theme}
           />
         </>
       )}

@@ -1,10 +1,14 @@
-export default function Image({ post: { image } }) {
+export default function Image({ post: { imageLight, imageDark }, theme }) {
   return (
     <>
-      {image ? (
+      {imageLight && imageDark ? (
         <img
           className="post-image"
-          src={`${import.meta.env.VITE_BASE_URL}img/${image}`}
+          src={
+            theme === "light"
+              ? `${import.meta.env.VITE_BASE_URL}img/${imageLight}`
+              : `${import.meta.env.VITE_BASE_URL}img/${imageDark}`
+          }
         />
       ) : null}
     </>
