@@ -128,6 +128,7 @@ body {
   /* border: 1px solid red; */
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   position: fixed;
   /* top: 0; */
   top: 0;
@@ -161,6 +162,20 @@ body {
     flex-direction: column-reverse;
     align-items: center;
   }
+}
+
+.theme-circle {
+  border: 1px solid var(--text-color);
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--text-color) 50%,
+    var(--bg-color-card) 50%
+  );
+  margin-left: 2px;
+  cursor: pointer;
 }
 
 .title-container {

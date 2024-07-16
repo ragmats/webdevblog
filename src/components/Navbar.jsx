@@ -62,7 +62,6 @@ export default function Navbar({
           </button>
           ,&nbsp;
         </span>
-
         <span>
           <button
             className="btn"
@@ -71,12 +70,6 @@ export default function Navbar({
             }
           >
             blog
-          </button>
-          ,&nbsp;
-        </span>
-        <span>
-          <button className="btn" onClick={() => toggleTheme()}>
-            {theme === "light" ? "D" : "L"}
           </button>
           ,&nbsp;
         </span>
@@ -92,6 +85,12 @@ export default function Navbar({
           </button>
           <span>&nbsp;&#93;</span>
         </div>
+        <span>
+          <button
+            className="theme-circle"
+            onClick={() => toggleTheme()}
+          ></button>
+        </span>
       </span>
     </div>
   );
