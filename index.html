@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/img/cube.svg" />
+    <link rel="stylesheet" href="/src/routes/Root.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Steven Coy, Web Dev</title>
     <script>
-      // Set theme initially here, according to local storage.
-      const theme = localStorage.getItem("theme");
+      // This script sets initial CSS variables to prevent "darkmode flash"
+      // It is repeated because importing the module causes a flash on load in Firefox
+      // The repeated modules:
+      // import {
+      //   setThemeToLight,
+      //   setThemeToDark,
+      // } from "/src/utils/toggleTheme.js";
 
-      // Set initial CSS variables to prevent "darkmode flash"
       const lightThemeVariables = [
         { name: "--cube-back-shadow", color: "rgb(225, 225, 225)" },
         { name: "--interact-color", color: "lightseagreen" },
@@ -36,14 +41,47 @@
         { name: "--border-color-card", color: "rgb(50, 50, 50)" },
       ];
 
-      if (!theme || theme === "light") {
+      function setThemeToLight() {
+        console.log("setting theme to light colors");
+        // Save current theme in local storage
+        localStorage.setItem("theme", "light");
         lightThemeVariables.forEach((color) =>
           document.documentElement.style.setProperty(color.name, color.color)
         );
-      } else if (theme === "dark") {
+      }
+
+      function setThemeToDark() {
+        console.log("setting theme to dark colors");
+        localStorage.setItem("theme", "dark");
         darkThemeVariables.forEach((color) =>
           document.documentElement.style.setProperty(color.name, color.color)
         );
+      }
+
+      // Check if a theme has set in local storage
+      const theme = localStorage.getItem("theme");
+
+      // See if user has set browser to prefer dark mode
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      console.log("prefers dark:", prefersDark);
+
+      // If local storage theme, set to that above all
+      // If not, first check if dark preference is true.
+      // If yes, set to dark, otherwise set to light.
+      if (theme) {
+        console.log(`There is a theme (${theme}) in local storage`);
+        if (theme === "light") setThemeToLight();
+        else if (theme === "dark") setThemeToDark();
+      } else {
+        console.log("There is no theme in local storage");
+        if (prefersDark) {
+          setThemeToDark();
+        } else {
+          setThemeToLight();
+        }
       }
     </script>
   </head>
