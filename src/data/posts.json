@@ -5,7 +5,11 @@
     "title": "Avoid This Nuisance When Deploying a React Router Project to GitHub Pages",
     "date": "07/16/2024",
     "type": "Discussion",
-    "tags": ["React Router", "GitHub", "Deployment"],
+    "tags": [
+      "React Router",
+      "GitHub",
+      "Deployment"
+    ],
     "imageIsLogo": false,
     "body": "<p>Deployment, the dreaded forced switching of environments, can be unnerving. One moment, everything is humming along in your local dev space. The next, you type the deploy command, and everything breaks &#128553;</p><p>In my project (this website actually), I was using Vite and React Router while attempting to deploy to GitHub Pages. Initially, all I got was a blank page at the root (hello Problem 1). After resolving this, all of my routes then led to a 404 whenever they were either refreshed or used as an entry point of the site (enter Problem 2).</p><h4>Problem 1</h4><p>I solved Problem 1 by properly setting and handling my project's basename in the router object. This defaults to &#8220;/&#8221; and needs to be set to your repository name (in my case, &#8220;/webdevblog/&#8221;) on GitHub Pages. Hardcoding this made my production site work, but broke my local development version. In order to get both working, I had to use environment variables in the root folder (filename &#8220;.env&#8221;) with the following:</p><p class=\"quote bold\">VITE_BASE_URL=/</p><p>and the production variable (filename: &#8220;.env.production&#8221;):</p><p class=\"quote bold\">VITE_BASE_URL=/yourBaseName/</p><p>Then, I was able to import these as needed using</p><p class=\"quote bold\">import.meta.env.VITE_BASE_URL</p><p>in my router object and elsewhere (like in image paths). I did encounter more trouble importing these variables in vite.config.js but solved this by using loadEnv (more on this in the <a href=\"https://vitejs.dev/config/#using-environment-variables-in-config\" target=\"_new\">Vite docs</a>).</p><p>Hilariously, once I switched GitHub Pages over to a custom domain (stevencoy.com), everything I just described was no longer an issue as the basename was back to the default &#8220;/&#8221;! So, if you plan to use a custom domain, just skip all of this hassle and try deploying with your custom domain and the default basename from the start. (Make sure to put a CNAME file in your public folder.)</p><h4>Problem 2</h4><p>Problem 2 was a bit of a different story. By default, GitHub Pages looks for an index.html file. Some parts of my site, namely the individual post pages (found at path &#8220;/basename/posts/slug&#8221;), were handled by React Router, so there was no index.html to be found at those paths. I could get to them from my homepage without fail, but if the individual posts themselves were either refreshed or used as the entry point, GitHub Pages would 404 me hard... because it could not find an index.html file there.</p><p>My (somewhat band-aided) solution was to create a custom 404.html (placed in the public folder) with the following logic:</p><ol><li>Get the current URL (the post path that failed).</li><li>Parse out the substring after the last slash in the URL and set this as a &#8220;possible slug&#8221;.</li><li>Redirect to the home route (which does have an index.html so GitHub Pages won't get angry), with the possible slug as a search parameter in the URL.</li><li>In the Root/App component, navigate to the proper page if there is a search parameter that matches an existing slug.</li></ol><p>For step #4, I used the <a href=\"https://reactrouter.com/en/main/hooks/use-navigate\" target=\"_new\">useNavigate</a> and <a href=\"https://reactrouter.com/en/main/hooks/use-search-params#usesearchparams\" target=\"_new\">useSearchParams</a> hooks from react-router-dom. The code and process for solving problem 2 is further detailed <a href=\"https://stackoverflow.com/questions/62047422/404-when-trying-to-enter-a-react-app-route/78744541#78744541\" target=\"_new\">on StackOverflow</a> or in my website <a href=\"https://github.com/ragmats/webdevblog/blob/f6d297e6bae50ea996db12633e8f32d3ace16a05/src/routes/Root.jsx#L87\" target=\"_new\">repo</a>.</p>",
     "slug": "avoid-this-nuisance-when-deploying-a-react-router-project-to-github-pages"
@@ -16,7 +20,12 @@
     "title": "Hello World to My New React Web Dev Portfolio Blog Website Thing!",
     "date": "07/14/2024",
     "type": "Website",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageIsLogo": false,
     "body": "<p>Given that most of my projects these days are in React, it made sense to rebuild my previous portfolio site (which used Jeckyll) from scratch in React to serve as an ongoing sandbox for me to experiment and build upon.</p><p>In addition to featuring my main projects, I plan to keep my development skills sharp with smaller, experimental projects and discussions. Some of these may become features on this site if they make sense to add, while others will be purely for fun and learning.</p><h4>Planned Upcoming Features:</h4><ul><li><span class=\"quote bold\">Sharable Filtered Pages:</span> Enable filters to work with search parameters, allowing filtered pages to be shared.</li><li><span class=\"quote bold\">Light/Dark Mode:</span> Implement a toggle for light and dark modes.</li><li><span class=\"quote bold\">Enhanced Styling:</span> Add icons to improve the site’s design.</li><li><span class=\"quote bold\">Collapsible Action Button:</span> Introduce a collapsible action button with filtering options.</li><li><span class=\"quote bold\">Loading and Pagination:</span> Implement loading and paginated posts if needed.</li></ul><p>Stay tuned for more updates as I continue to develop and improve this site.</p>",
     "slug": "hello-world-to-my-new-react-web-dev-portfolio-blog-website-thing"
@@ -27,7 +36,13 @@
     "title": "HISSINGBELL Developer Website",
     "date": "10/06/2023",
     "type": "Project",
-    "tags": ["Next.js", "React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "hissingbell_light.png",
     "imageDark": "hissingbell_dark.png",
     "imageIsLogo": true,
@@ -40,7 +55,12 @@
     "title": "SIRME, a React Simon Game",
     "date": "03/27/2023",
     "type": "Project",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "sirme-logo.svg",
     "imageDark": "sirme-logo.svg",
     "imageIsLogo": true,
@@ -53,7 +73,13 @@
     "title": "GridSquid, an Educational Custom Grid Creator",
     "date": "11/9/2022",
     "type": "Project",
-    "tags": ["Python", "Django", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "gs_logo_long.svg",
     "imageDark": "gs_logo_long.svg",
     "imageIsLogo": true,
@@ -66,7 +92,13 @@
     "title": "Oopsie, an Anti-Fertility Calculator",
     "date": "11/15/2021",
     "type": "Project",
-    "tags": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "oopsie_logo.svg",
     "imageDark": "oopsie_logo.svg",
     "imageIsLogo": true,
