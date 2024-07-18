@@ -161,6 +161,11 @@ body {
   .nav-container {
     margin: 0 2em;
   }
+  @media (width <= 650px) {
+    .nav-container {
+      margin: 0 1em;
+    }
+  }
 }
 
 .space-between {
@@ -331,12 +336,17 @@ body {
 }
 
 @media (width <= 650px) {
+  .container {
+    margin: 0 1em 2em 1em;
+  }
+
   .profile-photo-container {
     width: 200px;
   }
 
   .profile {
     flex-direction: column;
+    padding: 1em;
   }
 }
 
@@ -426,6 +436,12 @@ body {
 .post-image {
   /* border: 1px solid black; */
   width: 100%;
+}
+
+@media (width <= 650px) {
+  .post {
+    padding: 1em;
+  }
 }
 
 .dev-blog-body-container {
