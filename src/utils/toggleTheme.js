@@ -9,6 +9,7 @@ const lightThemeVariables = [
   { name: "--featured-border-color", color: "black" },
   { name: "--featured-border-color-hover", color: "darkgray" },
   { name: "--border-color-card", color: "lightgray" },
+  { name: "--code-snippet-font-color", color: "black" },
 ];
 
 const darkThemeVariables = [
@@ -22,6 +23,7 @@ const darkThemeVariables = [
   { name: "--featured-border-color", color: "rgb(53, 53, 53)" },
   { name: "--featured-border-color-hover", color: "dimgray" },
   { name: "--border-color-card", color: "rgb(50, 50, 50)" },
+  { name: "--code-snippet-font-color", color: "white" },
 ];
 
 export function setThemeToLight() {

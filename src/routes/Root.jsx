@@ -17,6 +17,8 @@ import { setThemeToLight, setThemeToDark } from "../utils/toggleTheme";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// TODO Need to fix height of code snippet in collapsed post.
+// TODO Make font bigger (1.2em) without mobile view breaking.
 // TODO Try Prism for code snippets?
 // TODO Make a better light/dark mode button in Navbar
 // TODO Can tags on posts fit better? They wrap and orphan easily on mobile.
