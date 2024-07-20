@@ -14,15 +14,15 @@ export default function Profile() {
         </div>
         <div className="profile-summary">
           <p>
-            I'm Steven. I started building websites as a teenager with HTML and
+            I’m Steven. I started building websites as a teenager with HTML and
             CSS in Notepad. These days, I like to make web apps mostly with
-            JavaScript and React. While I've taken courses like Harvard's CS50x,
+            JavaScript and React. While I’ve taken courses like Harvard’s CS50x,
             my dev skills are mostly self-taught.
           </p>
           <p>
             I like being able to have an idea, obsess over it, and bring it to
             life with code. I learn the most when I begin with no clue how to
-            make it happen. But once it does, it's an amazing feeling.
+            make it happen. But once it does, it’s an amazing feeling.
           </p>
           <p>
             This site,{" "}
