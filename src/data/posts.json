@@ -5,9 +5,13 @@
     "title": "Number Quest, Version 1.0",
     "date": "08/26/2024",
     "type": "Project",
-    "tags": ["CSS", "React", "HTML"],
-    "imageLight": "numberquest_logo.png",
-    "imageDark": "numberquest_logo.png",
+    "tags": [
+      "CSS",
+      "React",
+      "HTML"
+    ],
+    "imageLight": "numberquest_logo_light.png",
+    "imageDark": "numberquest_logo_dark.png",
     "imageIsLogo": true,
     "body": "<h5><a href=\"https://numberquest.ragmats.com/\" target=\"_new\">Live project</a> | <a href=\"https://github.com/ragmats/numberquest\" target=\"_new\">GitHub Repo</a></h5><p>Number Quest is a text-based, number-counting RPG created in React, featuring a responsive browser game designed to help kids improve their math and reading skills.</p><p>The live link leads to version 1.0, which currently includes placeholder artwork and a few upcoming features.</p><h5>Features:</h5><ul><li><span class=\"bold\">Interactive Gameplay:</span> A text-based number-guessing game that helps kids practice math and reading.</li><li><span class=\"bold\">Replayability:</span> Randomized game elements ensure a unique experience every time.</li><li><span class=\"bold\">Responsive Design:</span> Optimized for various screen sizes, supporting both landscape and portrait orientations.</li><li><span class=\"bold\">Autosave Functionality:</span> Game progress is automatically saved in localStorage, so players won’t lose their place upon reloading the page.</li><li><span class=\"bold\">Quest Log:</span> Tracks the narrative and records unique player actions.</li><li><span class=\"bold\">Sleek UI:</span> Includes an options menu, game map, and the ability to change the player name at any time.</li><li><span class=\"bold\">Dynamic Health Bars:</span> Responsive health bar components enhance the epic final battle.</li><li><span class=\"bold\">Efficient Image Loading:</span> Pre-loaded images are automatically selected based on screen size to minimize bandwidth usage.</li><li><span class=\"bold\">Adaptive Interface:</span> Fonts and buttons auto-size based on window resize for an optimal user experience.</li></ul><h5>Future Plans:</h5><ul><li><span class=\"bold\">Custom Artwork</span>: Human-generated artwork to replace placeholders.</li><li><span class=\"bold\">Animated Text</span>: Integrate React Split Text and Framer Motion for dynamic text animations.</li><li><span class=\"bold\">Kid Mode:</span> A special mode with artwork and reading levels ideal for early learners.</li><li><span class=\"bold\">Endless Gameplay:</span> A looping mode with continuous gameplay and increasing difficulty (new game+).</li><li><span class=\"bold\">Audio Enhancements:</span> Add music and sound effects.</li><li><span class=\"bold\">Enhanced Animations:</span> Improve transitions and animations for a smoother experience; add swipe attack animations in the final boss battle.</li><li><span class=\"bold\">Mobile Compatibility:</span> Make the game available as a mobile app.</li></ul><h5>History</h5><p>Number Quest was a fun idea I initially had in the summer of 2021 (not long after I began my own coding quest), writen in the first language I learned: C. As a bonus, I’ve made that early version of Number Quest available on <a href=\"https://replit.com/@stevencoy/NumberQuest\" target=\"_new\">Replit</a> (or via <a href=\"https://numberquest.ragmats.com/img/number_quest_C.png\" target=\"_new\">this cumbersome screenshot</a> in all its glory). I always believed the concept deserved a visual approach, so it’s been exciting to bring it to life with more complextiy in React.</p>",
     "slug": "number-quest-version-10"
@@ -18,7 +22,11 @@
     "title": "Vanquishing the Dark Mode Flash (and All Other Flashes) in React",
     "date": "07/18/2024",
     "type": "Discussion",
-    "tags": ["CSS", "React", "HTML"],
+    "tags": [
+      "CSS",
+      "React",
+      "HTML"
+    ],
     "imageIsLogo": false,
     "body": "<p>I was in a good mood because I had just implemented dark mode into my React site, and it seemed to be working well. My theme approach was simple: Create CSS variables for any color style and toggle those color variables in the Root component according to the current theme state, using JavaScript, like this:</p><p class=\"code-snippet\"><span class=\"code-line\">document.documentElement.</span><span class=\"code-line\">style.setProperty(\"CSSVariable\", \"ColorValue\")</span></p><p>I put all the variables and colors into objects and wrote a cute little function using <span class=\"bold italic\">forEach()</span> that switches them all from light to dark modes based on the state. Sounds good!</p><h4>The Flash Issue</h4><p>But then I refreshed the page and saw it... the evil, undeniable, abominable... flash. It occupied only a split second in time and space, but it was enough to disgust even the most casual of perfectionists. Would my mother notice it? Probably not. But my mother’s UEX sense could not be the standard here. That flash had to be destroyed.</p><h5>What Exactly Causes the Flash?</h5><p>It was the default color theme peeking through just before the real theme took effect. This is because the theme defaults to light. It then checks if a theme has been saved in local storage. If true, it switches to that. So, dark mode user would get a quick taste of light mode right before dark mode. Simply revolting.</p><h4>The Solution</h4><p>After some reading (thanks to <a href=\"https://www.joshwcomeau.com/react/dark-mode/\" target=\"_new\">Josh W Comeau</a>) and thinking, I went to the place where everything begins: <span class=\"bold italic\">index.html</span>. When using React, I don’t think that much about <span class=\"bold italic\">index.html</span> anymore unless it’s to set my site’s title or favicon. But this is where the solution needed to happen: I injected a script that would set the theme initially before React could begin its magic.</p><p>First, I checked if a theme was saved in local storage. Next, I checked if the user had set the browser to prefer dark mode. Then, I simply set the theme based on these. If there was a local storage theme, this was the user’s intention, so that won. If not, the theme would get set to the browser preference if one existed. (And the remaining poor souls would just get light mode.)</p><p>This worked! Until I checked Firefox and there it was again... another flash &#128561;</p><h4>FOUC Firefox</h4><p>Why was it still flashing?!? Not only was it flashing, but something even more disgusting was happening: FOUC (Flash of Unstyled Content). A FOUC would not, could not stand (even if it was only happening in Firefox, a browser that apparently only 3.36% of the current web market uses).</p><p>This <a href=\"https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer\" target=\"_new\">discussion on Stack Overflow</a> indicated the problem might be in the <span class=\"bold italic\">@import</span> of the CSS file. This seemed to make sense because the import happens in my Root React component. If the default style was flashing before with the dark mode problem, it stands to reason that unstyled content also would.</p><p>So, I removed the import of my CSS file in my React component (which I admit felt weird to do) and headed back to my old friend, <span class=\"bold italic\">index.html</span>, and linked my CSS in the HTML the “old school” way. Guess what? It worked.</p><h5>The DRY Dilemma</h5><p>Okay. Remember how I said I had injected a script into <span class=\"bold italic\">index.html</span> to set the initial theme? It was bugging me that this code was repeated in my Root component in React. A clear violation of DRY (Don’t Repeat Yourself). So, I had an itch to move this code to a separate JavaScript file, export the function, and import it as a module in both my Root component and <span class=\"bold italic\">index.html</span>.</p><p>But once I did this, the flash was back in Firefox. It was the import after all.</p><p>I hit undo and said DRY be damned, at least in this case.</p>",
     "slug": "vanquishing-the-dark-mode-flash-and-all-other-flashes"
@@ -29,7 +37,11 @@
     "title": "Avoid This Nuisance When Deploying a React Router Project to GitHub Pages",
     "date": "07/16/2024",
     "type": "Discussion",
-    "tags": ["React Router", "GitHub", "Deployment"],
+    "tags": [
+      "React Router",
+      "GitHub",
+      "Deployment"
+    ],
     "imageIsLogo": false,
     "body": "<p>Deployment, the dreaded forced switching of environments, can be unnerving. One moment, everything is humming along in your local dev space. The next, you type the deploy command, and everything breaks &#128553;</p><p>In my project (this website actually), I was using Vite and React Router while attempting to deploy to GitHub Pages. Initially, all I got was a blank page at the root (hello Problem 1). After resolving this, all of my routes then led to a 404 whenever they were either refreshed or used as an entry point of the site (enter Problem 2).</p><h5>Problem 1</h5><p>I solved Problem 1 by properly setting and handling my project’s basename in the router object. This defaults to “/”; and needs to be set to your repository name (in my case, “/webdevblog/”) on GitHub Pages. Hardcoding this made my production site work, but broke my local development version. In order to get both working, I had to use environment variables in the root folder (filename “.env”) with the following:</p><p class=\"code-snippet\">VITE_BASE_URL=/</p><p>and the production variable (filename: “.env.production”):</p><p class=\"code-snippet\">VITE_BASE_URL=/yourBaseName/</p><p>Then, I was able to import these as needed using</p><p class=\"code-snippet\">import.meta.env.VITE_BASE_URL</p><p>in my router object and elsewhere (like in image paths). I did encounter more trouble importing these variables in vite.config.js but solved this by using loadEnv (more on this in the <a href=\"https://vitejs.dev/config/#using-environment-variables-in-config\" target=\"_new\">Vite docs</a>).</p><p>Hilariously, once I switched GitHub Pages over to a custom domain (stevencoy.com), everything I just described was no longer an issue as the basename was back to the default “/”! So, if you plan to use a custom domain, just skip all of this hassle and try deploying with your custom domain and the default basename from the start. (Make sure to put a CNAME file in your public folder.)</p><h5>Problem 2</h5><p>Problem 2 was a bit of a different story. By default, GitHub Pages looks for an index.html file. Some parts of my site, namely the individual post pages (found at path “/basename/posts/slug”), were handled by React Router, so there was no index.html to be found at those paths. I could get to them from my homepage without fail, but if the individual posts themselves were either refreshed or used as the entry point, GitHub Pages would 404 me hard... because it could not find an index.html file there.</p><p>My (somewhat band-aided) solution was to create a custom 404.html (placed in the public folder) with the following logic:</p><ol><li>Get the current URL (the post path that failed).</li><li>Parse out the substring after the last slash in the URL and set this as a “possible slug”.</li><li>Redirect to the home route (which does have an index.html so GitHub Pages won’t get angry), with the possible slug as a search parameter in the URL.</li><li>In the Root/App component, navigate to the proper page if there is a search parameter that matches an existing slug.</li></ol><p>For step #4, I used the <a href=\"https://reactrouter.com/en/main/hooks/use-navigate\" target=\"_new\">useNavigate</a> and <a href=\"https://reactrouter.com/en/main/hooks/use-search-params#usesearchparams\" target=\"_new\">useSearchParams</a> hooks from react-router-dom. The code and process for solving problem 2 is further detailed <a href=\"https://stackoverflow.com/questions/62047422/404-when-trying-to-enter-a-react-app-route/78744541#78744541\" target=\"_new\">on StackOverflow</a> or in my website <a href=\"https://github.com/ragmats/webdevblog/blob/f6d297e6bae50ea996db12633e8f32d3ace16a05/src/routes/Root.jsx#L87\" target=\"_new\">repo</a>.</p>",
     "slug": "avoid-this-nuisance-when-deploying-a-react-router-project-to-github-pages"
@@ -40,7 +52,12 @@
     "title": "Hello World to My New React Web Dev Portfolio Blog Website Thing!",
     "date": "07/14/2024",
     "type": "Website",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageIsLogo": false,
     "body": "<p>Given that most of my projects these days are in React, it made sense to rebuild my previous portfolio site (which used Jeckyll) from scratch in React to serve as an ongoing sandbox for me to experiment and build upon.</p><p>In addition to featuring my main projects, I plan to keep my development skills sharp with smaller, experimental projects and discussions. Some of these may become features on this site if they make sense to add, while others will be purely for fun and learning.</p><h5>Planned Upcoming Features:</h5><ul><li><span class=\"bold\">Sharable Filtered Pages:</span> Enable filters to work with search parameters, allowing filtered pages to be shared.</li><li><span class=\"bold\">Light/Dark Mode:</span> Implement a toggle for light and dark modes.</li><li><span class=\"bold\">Enhanced Styling:</span> Add icons to improve the site’s design.</li><li><span class=\"bold\">Collapsible Action Button:</span> Introduce a collapsible action button with filtering options.</li><li><span class=\"bold\">Loading and Pagination:</span> Implement loading and paginated posts if needed.</li></ul><p>Stay tuned for more updates as I continue to develop and improve this site.</p>",
     "slug": "hello-world-to-my-new-react-web-dev-portfolio-blog-website-thing"
@@ -51,7 +68,13 @@
     "title": "HISSINGBELL Developer Website",
     "date": "10/06/2023",
     "type": "Project",
-    "tags": ["Next.js", "React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "hissingbell_light.png",
     "imageDark": "hissingbell_dark.png",
     "imageIsLogo": true,
@@ -64,7 +87,12 @@
     "title": "SIRME, a React Simon Game",
     "date": "03/27/2023",
     "type": "Project",
-    "tags": ["React", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "sirme-logo.svg",
     "imageDark": "sirme-logo.svg",
     "imageIsLogo": true,
@@ -77,7 +105,13 @@
     "title": "GridSquid, an Educational Custom Grid Creator",
     "date": "11/9/2022",
     "type": "Project",
-    "tags": ["Python", "Django", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "gs_logo_long.svg",
     "imageDark": "gs_logo_long.svg",
     "imageIsLogo": true,
@@ -90,7 +124,13 @@
     "title": "Oopsie, an Anti-Fertility Calculator",
     "date": "11/15/2021",
     "type": "Project",
-    "tags": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "tags": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "imageLight": "oopsie_logo.svg",
     "imageDark": "oopsie_logo.svg",
     "imageIsLogo": true,
