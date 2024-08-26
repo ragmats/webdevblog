@@ -1,5 +1,18 @@
 [
   {
+    "id": 8,
+    "featured": true,
+    "title": "Number Quest, Version 1.0",
+    "date": "08/26/2024",
+    "type": "Project",
+    "tags": ["CSS", "React", "HTML"],
+    "imageLight": "numberquest_logo.png",
+    "imageDark": "numberquest_logo.png",
+    "imageIsLogo": true,
+    "body": "<h5><a href=\"https://numberquest.ragmats.com/\" target=\"_new\">Live project</a> | <a href=\"https://github.com/ragmats/numberquest\" target=\"_new\">GitHub Repo</a></h5><p>Number Quest is a text-based, number-counting RPG created in React, featuring a responsive browser game designed to help kids improve their math and reading skills.</p><p>The live link leads to version 1.0, which currently includes placeholder artwork and a few upcoming features.</p><h5>Features:</h5><ul><li><span class=\"bold\">Interactive Gameplay:</span> A text-based number-guessing game that helps kids practice math and reading.</li><li><span class=\"bold\">Replayability:</span> Randomized game elements ensure a unique experience every time.</li><li><span class=\"bold\">Responsive Design:</span> Optimized for various screen sizes, supporting both landscape and portrait orientations.</li><li><span class=\"bold\">Autosave Functionality:</span> Game progress is automatically saved in localStorage, so players won’t lose their place upon reloading the page.</li><li><span class=\"bold\">Quest Log:</span> Tracks the narrative and records unique player actions.</li><li><span class=\"bold\">Sleek UI:</span> Includes an options menu, game map, and the ability to change the player name at any time.</li><li><span class=\"bold\">Dynamic Health Bars:</span> Responsive health bar components enhance the epic final battle.</li><li><span class=\"bold\">Efficient Image Loading:</span> Pre-loaded images are automatically selected based on screen size to minimize bandwidth usage.</li><li><span class=\"bold\">Adaptive Interface:</span> Fonts and buttons auto-size based on window resize for an optimal user experience.</li></ul><h5>Future Plans:</h5><ul><li><span class=\"bold\">Custom Artwork</span>: Human-generated artwork to replace placeholders.</li><li><span class=\"bold\">Animated Text</span>: Integrate React Split Text and Framer Motion for dynamic text animations.</li><li><span class=\"bold\">Kid Mode:</span> A special mode with artwork and reading levels ideal for early learners.</li><li><span class=\"bold\">Endless Gameplay:</span> A looping mode with continuous gameplay and increasing difficulty (new game+).</li><li><span class=\"bold\">Audio Enhancements:</span> Add music and sound effects.</li><li><span class=\"bold\">Enhanced Animations:</span> Improve transitions and animations for a smoother experience; add swipe attack animations in the final boss battle.</li><li><span class=\"bold\">Mobile Compatibility:</span> Make the game available as a mobile app.</li></ul><h5>History</h5><p>Number Quest was a fun idea I initially had in the summer of 2021 (not long after I began my own coding quest), writen in the first language I learned: C. As a bonus, I’ve made that early version of Number Quest available on <a href=\"https://replit.com/@stevencoy/NumberQuest\" target=\"_new\">Replit</a> (or via <a href=\"https://numberquest.ragmats.com/img/number_quest_C.png\" target=\"_new\">this cumbersome screenshot</a> in all its glory). I always believed the concept deserved a visual approach, so it’s been exciting to bring it to life with more complextiy in React.</p>",
+    "slug": "number-quest-version-10"
+  },
+  {
     "id": 7,
     "featured": false,
     "title": "Vanquishing the Dark Mode Flash (and All Other Flashes) in React",
