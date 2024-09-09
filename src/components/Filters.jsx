@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import SectionHeader from "./SectionHeader";
 
 export default function Filters({
   postData,
@@ -6,6 +7,7 @@ export default function Filters({
   selectedTags,
   updateSelectedTypes,
   updateSelectedTags,
+  theme,
 }) {
   // Create sorted array of all post types without duplicates
   const postTypesSet = new Set();
@@ -22,7 +24,12 @@ export default function Filters({
   return (
     <>
       <div className="jump-link" id="filters">
-        <h2>#filters</h2>
+        {/* <h2>#filters</h2> */}
+        <SectionHeader
+          remixIconName="RiFoldersLine"
+          headerText="filters"
+          theme={theme}
+        />
       </div>
       <div className="filters-container">
         <div className="filters-types-container">

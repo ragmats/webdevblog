@@ -1,8 +1,15 @@
-export default function Profile() {
+import SectionHeader from "./SectionHeader";
+
+export default function Profile({ theme }) {
   return (
     <>
       <div className="jump-link" id="profile">
-        <h2 id="profile">#hi</h2>
+        {/* <h2 id="profile">#hi</h2> */}
+        <SectionHeader
+          remixIconName="RiThumbUpLine"
+          headerText="hi"
+          theme={theme}
+        />
       </div>
       <div className="profile">
         <div className="profile-photo-container">
@@ -14,10 +21,14 @@ export default function Profile() {
         </div>
         <div className="profile-summary">
           <p>
-            I’m Steven. I started building websites as a teenager with HTML and
-            CSS in Notepad. These days, I like to make web apps mostly with
-            JavaScript and React. While I’ve taken courses like Harvard’s CS50x,
-            my dev skills are mostly self-taught.
+            I’m Steven. I am seeking a Front-End Developer position specializing
+            in React.
+          </p>
+          <p>
+            I started building websites as a teenager with HTML and CSS in
+            Notepad. These days, I like to make web apps mostly with JavaScript
+            and React. While I’ve taken courses like Harvard’s CS50x, my dev
+            skills are mostly self-taught.
           </p>
           <p>
             I like being able to have an idea, obsess over it, and bring it to
@@ -32,8 +43,8 @@ export default function Profile() {
             >
               which I built with React
             </a>
-            , is a sandbox/showcase of my dev projects, along with some
-            experiments and discussions.
+            , is a sandbox for my dev projects, along with some experiments and
+            discussions.
           </p>
           <span>
             &#91;&nbsp;

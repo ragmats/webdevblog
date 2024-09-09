@@ -126,13 +126,14 @@ function App() {
       <CubeHeader />
       {location.pathname === "/" && (
         <>
-          <Profile />
+          <Profile theme={theme} />
           <Filters
             postData={postData}
             selectedTypes={selectedTypes}
             selectedTags={selectedTags}
             updateSelectedTypes={updateSelectedTypes}
             updateSelectedTags={updateSelectedTags}
+            theme={theme}
           />
           <Featured
             postData={postData}

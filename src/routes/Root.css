@@ -108,7 +108,8 @@ h5 {
   margin: 0;
 }
 
-.code-snippet {
+.code-snippet,
+.code-snippet-inline {
   /* border: 1px solid lightgray; */
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
@@ -118,6 +119,11 @@ h5 {
   color: var(--code-snippet-font-color);
   padding: 1em;
   background-color: var(--bg-color-body);
+}
+
+.code-snippet-inline {
+  font-size: 0.8em;
+  padding: 0.2em;
 }
 
 .code-line {
@@ -314,6 +320,26 @@ body {
   100% {
     opacity: 100%;
   }
+}
+
+.section-header h2 {
+  /* border: 1px solid red; */
+  margin: 0;
+  line-height: 1;
+}
+
+.section-header span {
+  /* border: 1px solid red; */
+  width: 26px;
+  height: 26px;
+}
+
+.section-header {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+  margin-bottom: 0.35em;
 }
 
 .profile {

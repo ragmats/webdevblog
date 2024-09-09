@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import SectionHeader from "./SectionHeader";
 
 export default function Featured({ postData, clearAllFilters, theme }) {
   // Create array of featured posts sorted by date
@@ -11,7 +12,12 @@ export default function Featured({ postData, clearAllFilters, theme }) {
   return (
     <>
       <div className="jump-link" id="projects">
-        <h2>#featured projects</h2>
+        {/* <h2>#featured projects</h2> */}
+        <SectionHeader
+          remixIconName="RiCodeBoxLine"
+          headerText="featured projects"
+          theme={theme}
+        />
       </div>
       <div className="featured-posts-container">
         {featuredPosts.map((post) => {

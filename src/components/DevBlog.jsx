@@ -4,6 +4,7 @@ import SubHeader from "./DevBlog/SubHeader";
 import Image from "./DevBlog/Image";
 import Body from "./DevBlog/Body";
 import Tags from "./DevBlog/Tags";
+import SectionHeader from "./SectionHeader";
 
 export default function DevBlog({
   postData,
@@ -54,7 +55,12 @@ export default function DevBlog({
   return (
     <>
       <div className="jump-link" id="devblog">
-        <h2>#dev blog</h2>
+        {/* <h2>#dev blog</h2> */}
+        <SectionHeader
+          remixIconName="RiBook3Line"
+          headerText="dev blog"
+          theme={theme}
+        />
       </div>
       <div className="dev-blog-container">
         {filteredPosts.length === 0 && <p>No posts!</p>}
