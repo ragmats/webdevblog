@@ -21,7 +21,7 @@ export default function Profile({ theme }) {
         </div>
         <div className="profile-summary">
           <p>
-            I’m Steven. I am seeking a Front-End Developer position specializing
+            I’m Steven. I am seeking a front-end developer position specializing
             in React.
           </p>
           <p>

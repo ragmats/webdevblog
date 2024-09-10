@@ -2,7 +2,7 @@
   {
     "id": 9,
     "featured": false,
-    "title": "Section Header Component with Remix Icons",
+    "title": "Using Remix Icons for a Better Section Header Component",
     "date": "09/09/2024",
     "type": "Website",
     "tags": [
@@ -12,7 +12,7 @@
     ],
     "imageIsLogo": false,
     "body": "<p><a href=\"https://remixicon.com/\" target=\"_new\">Remix Icons</a> is an open-source collection of pixel-perfect vector icons that are “simply delightful” for designers and developers. After trying them out, I find that they live up to this description.</p><h4>The Section Header Component</h4><p>On this React site, I have created a dedicated component for section headers. This component accepts three props: the icon name (which I copy from <a href=\"https://remixicon.com/\" target=\"_new\">remixicon.com</a>), the header text, and the theme (to adjust the color based on dark/light mode preferences).</p><p>To use the icons, I convert the copy/pasted names from <span class=\"bold\">kebab-case</span> (e.g., <span class=\"code-snippet-inline\">heart-line</span>) to <span class=\"bold\">PascalCase</span> (e.g., <span class=\"code-snippet-inline\">RiHeartLine</span>), with the prefix “Ri” (short for “Remix Icon”).</p><h4>Dynamically Loading Remix Icons</h4><p>Remix Icons are React-friendly and each icon comes pre-built as a React component. You can find more about their React integration <a href=\"https://github.com/Remix-Design/RemixIcon\" target=\"_new\">here</a>.</p><p>To dynamically load the correct icon, I used an <span class=\"code-snippet-inline\">async</span> function inside a <span class=\"code-snippet-inline\">useEffect</span> hook that imports the icon component based on the prop value. Once the icon is loaded, I store it in the component’s state, allowing it to render seamlessly in the JSX.</p><h4>Why Dynamic Imports?</h4><p>You might wonder, “Why not just use the icon component the regular way?” The advantage of dynamic loading is that I can centralize the logic for the icon’s size prop, which each Remix Icon component accepts. If I ever want to adjust the size, I can do it in one place instead of updating each icon individually.</p><p>Plus, this method keeps the code clean and scalable and very, very <span class=\"bold\">DRY</span>.</p>",
-    "slug": "section-header-component-with-remix-icons"
+    "slug": "using-remix-icons-for-a-better-section-header-component"
   },
   {
     "id": 8,
