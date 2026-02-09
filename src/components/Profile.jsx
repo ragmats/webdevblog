@@ -20,10 +20,7 @@ export default function Profile({ theme }) {
           ></img>
         </div>
         <div className="profile-summary">
-          <p>
-            I’m Steven. I am seeking a front-end developer position specializing
-            in React.
-          </p>
+          <p>I’m Steven. I am a front-end developer specializing in React.</p>
           <p>
             I started building websites as a teenager with HTML and CSS in
             Notepad. These days, I like to make web apps mostly with JavaScript
